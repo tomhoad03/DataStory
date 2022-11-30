@@ -10,7 +10,7 @@ public class Season {
 
         this.year = Integer.valueOf(splitLine[0]);
         this.url = splitLine[1];
-        this.boxPlot = new BoxPlot(0.0, 0, 0, 0, 0.0);
+        this.boxPlot = new BoxPlot(0.0, 0, 0, 0.0, 0, 0.0);
     }
 
     @Override

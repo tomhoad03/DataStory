@@ -18,7 +18,7 @@ public class Race {
         this.circuitId = Integer.valueOf(splitLine[3]);
         this.name = splitLine[4];
         this.url = splitLine[7];
-        this.boxPlot = new BoxPlot(0.0, 0, 0, 0, 0.0);
+        this.boxPlot = new BoxPlot(0.0, 0, 0, 0.0, 0, 0.0);
     }
 
     @Override

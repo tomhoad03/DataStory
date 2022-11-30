@@ -20,8 +20,9 @@ public class VisualisationComputer {
         readLapTimes();
         readRaces();
         readSeasons();
-        calculateRacePointsBoxPlots();
-        calculateSeasonPointsBoxPlots();
+
+        calculateRaceTimesBoxPlots();
+        calculateSeasonTimesBoxPlots();
     }
 
     // Lap Times
@@ -64,15 +65,18 @@ public class VisualisationComputer {
     }
 
     // Calculate race box plots
-    public static void calculateRacePointsBoxPlots() throws IOException {
+    public static void calculateRaceTimesBoxPlots() throws IOException {
         FileWriter racePlotWriter = new FileWriter("computed_dataset\\race_times_box_plots.csv");
-        racePlotWriter.write("raceId,max,UQ,median,LQ,min");
+        racePlotWriter.write("raceId,max,UQ,median,mean,LQ,min");
 
         for (Race race : races) {
             ArrayList<LapTime> raceLapTimes = new ArrayList<>();
+            int totalTime = 0;
+
             for (LapTime lapTime : lapTimes) {
                 if (lapTime.getRaceId().equals(race.getRaceId())) {
                     raceLapTimes.add(lapTime);
+                    totalTime += lapTime.getMilliseconds();
                 }
             }
 
@@ -80,38 +84,42 @@ public class VisualisationComputer {
             int totalLaps = raceLapTimes.size();
 
             if (totalLaps > 0) {
-                int LQ = totalLaps / 4, median = LQ * 2, UQ = LQ * 3;
-                double IQR = raceLapTimes.get(UQ).getMilliseconds() - raceLapTimes.get(LQ).getMilliseconds();
-                double max = raceLapTimes.get(UQ).getMilliseconds() + (1.5 * IQR), min = raceLapTimes.get(LQ).getMilliseconds() - (1.5 * IQR);
-                race.setBoxPlot(new BoxPlot(max,
-                        raceLapTimes.get(UQ).getMilliseconds(),
-                        raceLapTimes.get(median).getMilliseconds(),
-                        raceLapTimes.get(LQ).getMilliseconds(),
-                        min));
+                int LQ = raceLapTimes.get(totalLaps / 4).getMilliseconds();
+                int median = raceLapTimes.get(totalLaps / 2).getMilliseconds();
+                int UQ = raceLapTimes.get((totalLaps / 4) * 3).getMilliseconds();
+                double IQR = UQ - LQ;
+                double max = UQ + (1.5 * IQR);
+                double min = LQ - (1.5 * IQR);
+                double mean = (double) totalTime / (double) totalLaps;
+
+                race.setBoxPlot(new BoxPlot(max, UQ, median, mean, LQ, min));
             } else {
-                race.setBoxPlot(new BoxPlot(0.0, 0, 0, 0, 0.0));
+                race.setBoxPlot(new BoxPlot(0.0, 0, 0, 0.0, 0, 0.0));
             }
 
             if (race.hasBoxPlot()) {
                 BoxPlot raceBoxPlot = race.getBoxPlot();
-                racePlotWriter.write("\n" + race.getRaceId() + "," + raceBoxPlot.getMax() + "," + raceBoxPlot.getUQ() + "," + raceBoxPlot.getMedian() + "," + raceBoxPlot.getLQ() + "," + raceBoxPlot.getMin());
+                racePlotWriter.write("\n" + race.getRaceId() + "," + raceBoxPlot.getMax() + "," + raceBoxPlot.getUQ() + "," + raceBoxPlot.getMedian() + "," + raceBoxPlot.getMean() + "," + raceBoxPlot.getLQ() + "," + raceBoxPlot.getMin());
             }
         }
         racePlotWriter.close();
     }
 
     // Calculate season plots
-    public static void calculateSeasonPointsBoxPlots() throws IOException {
+    public static void calculateSeasonTimesBoxPlots() throws IOException {
         FileWriter seasonPlotWriter = new FileWriter("computed_dataset\\season_times_box_plots.csv");
-        seasonPlotWriter.write("year,max,UQ,median,LQ,min");
+        seasonPlotWriter.write("year,max,UQ,median,mean,LQ,min");
 
         for (Season season : seasons) {
             ArrayList<LapTime> seasonLapTimes = new ArrayList<>();
+            int totalTime = 0;
+
             for (Race race : races) {
                 if (race.getYear().equals(season.getYear())) {
                     for (LapTime lapTime : lapTimes) {
                         if (lapTime.getRaceId().equals(race.getRaceId())) {
                             seasonLapTimes.add(lapTime);
+                            totalTime += lapTime.getMilliseconds();
                         }
                     }
                 }
@@ -121,21 +129,22 @@ public class VisualisationComputer {
             int totalLaps = seasonLapTimes.size();
 
             if (totalLaps > 0) {
-                int LQ = totalLaps / 4, median = LQ * 2, UQ = LQ * 3;
-                double IQR = seasonLapTimes.get(UQ).getMilliseconds() - seasonLapTimes.get(LQ).getMilliseconds();
-                double max = seasonLapTimes.get(UQ).getMilliseconds() + (1.5 * IQR), min = seasonLapTimes.get(LQ).getMilliseconds() - (1.5 * IQR);
-                season.setBoxPlot(new BoxPlot(max,
-                        seasonLapTimes.get(UQ).getMilliseconds(),
-                        seasonLapTimes.get(median).getMilliseconds(),
-                        seasonLapTimes.get(LQ).getMilliseconds(),
-                        min));
+                int LQ = seasonLapTimes.get(totalLaps / 4).getMilliseconds();
+                int median = seasonLapTimes.get(totalLaps / 2).getMilliseconds();
+                int UQ = seasonLapTimes.get((totalLaps / 4) * 3).getMilliseconds();
+                double IQR = UQ - LQ;
+                double max = UQ + (1.5 * IQR);
+                double min = LQ - (1.5 * IQR);
+                double mean = (double) totalTime / (double) totalLaps;
+
+                season.setBoxPlot(new BoxPlot(max, UQ, median, mean, LQ, min));
             } else {
-                season.setBoxPlot(new BoxPlot(0.0, 0, 0, 0, 0.0));
+                season.setBoxPlot(new BoxPlot(0.0, 0, 0, 0.0, 0, 0.0));
             }
 
             if (season.hasBoxPlot()) {
                 BoxPlot seasonBoxPlot = season.getBoxPlot();
-                seasonPlotWriter.write("\n" + season.getYear() + "," + seasonBoxPlot.getMax() + "," + seasonBoxPlot.getUQ() + "," + seasonBoxPlot.getMedian() + "," + seasonBoxPlot.getLQ() + "," + seasonBoxPlot.getMin());
+                seasonPlotWriter.write("\n" + season.getYear() + "," + seasonBoxPlot.getMax() + "," + seasonBoxPlot.getUQ() + "," + seasonBoxPlot.getMedian() + "," + seasonBoxPlot.getMean() + "," + seasonBoxPlot.getLQ() + "," + seasonBoxPlot.getMin());
             }
         }
         seasonPlotWriter.close();

@@ -4,13 +4,15 @@ public class BoxPlot {
     private final Double max;
     private final Integer UQ;
     private final Integer median;
+    private final Double mean;
     private final Integer LQ;
     private final Double min;
 
-    public BoxPlot(Double max, Integer UQ, Integer median, Integer LQ, Double min) {
+    public BoxPlot(Double max, Integer UQ, Integer median, Double mean, Integer LQ, Double min) {
         this.max = max;
         this.UQ = UQ;
         this.median = median;
+        this.mean = mean;
         this.LQ = LQ;
         this.min = min;
     }
@@ -21,6 +23,7 @@ public class BoxPlot {
                 "max=" + max +
                 ", UQ=" + UQ +
                 ", median=" + median +
+                ", mean=" + mean +
                 ", LQ=" + LQ +
                 ", min=" + min +
                 '}';
@@ -36,6 +39,10 @@ public class BoxPlot {
 
     public Integer getMedian() {
         return median;
+    }
+
+    public Double getMean() {
+        return mean;
     }
 
     public Integer getLQ() {
