@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Computing races">
-      <change afterPath="$PROJECT_DIR$/src/ergast_models/RaceBoxPlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Box plots">
       <change beforePath="$PROJECT_DIR$/src/Visualisation3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visualisation3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ergast_models/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/Race.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669820723614</updated>
-      <workItem from="1669820725184" duration="5290000" />
+      <workItem from="1669820725184" duration="5716000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -90,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669823676511</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Box plots">
+      <created>1669826187162</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669826187162</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +115,7 @@
     <MESSAGE value="Ergast API dataset" />
     <MESSAGE value="Computing laptimes" />
     <MESSAGE value="Computing races" />
-    <option name="LAST_COMMIT_MESSAGE" value="Computing races" />
+    <MESSAGE value="Box plots" />
+    <option name="LAST_COMMIT_MESSAGE" value="Box plots" />
   </component>
 </project>

@@ -3,15 +3,14 @@ import ergast_models.Race;
 import ergast_models.RaceBoxPlot;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
-import java.util.function.Predicate;
 
 public class Visualisation3 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         // Lap Times
         Scanner lapTimesScanner = new Scanner(new File("ergast_dataset\\lap_times.csv"));
         ArrayList<LapTime> lapTimes = new ArrayList<>();
@@ -21,6 +20,7 @@ public class Visualisation3 {
             String lapTime = lapTimesScanner.nextLine();
             lapTimes.add(new LapTime(lapTime));
         }
+        lapTimesScanner.close();
 
         // Races
         Scanner racesScanner = new Scanner(new File("ergast_dataset\\races.csv"));
@@ -31,12 +31,12 @@ public class Visualisation3 {
             String race = racesScanner.nextLine();
             races.add(new Race(race));
         }
-
-        System.out.println(lapTimes);
-        System.out.println(races);
-        System.out.println("Laps: " + lapTimes.size() + " Races: " + races.size());
+        racesScanner.close();
 
         // Calculate box plots
+        FileWriter racePlotWriter = new FileWriter("computed_dataset\\box_plots.csv");
+        racePlotWriter.write("raceId,max,UQ,median,LQ,min");
+
         for (Race race : races) {
             ArrayList<LapTime> raceLapTimes = new ArrayList<>();
             for (LapTime lapTime : lapTimes) {
@@ -60,9 +60,11 @@ public class Visualisation3 {
             }
 
             if (race.hasBoxPlot()) {
-                System.out.println(race.getBoxPlot());
+                RaceBoxPlot raceBoxPlot = race.getBoxPlot();
+                racePlotWriter.write("\n" + race.getRaceId() + "," + raceBoxPlot.getMax() + "," + raceBoxPlot.getUQ() + "," + raceBoxPlot.getMedian() + "," + raceBoxPlot.getLQ() + "," + raceBoxPlot.getMin());
             }
         }
+        racePlotWriter.close();
     }
 }
 
