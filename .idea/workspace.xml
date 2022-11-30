@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Box plots">
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Box plots csv">
+      <change afterPath="$PROJECT_DIR$/src/ergast_models/Season.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computed_dataset/box_plots.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visualisation3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visualisation3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/Race.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/RaceBoxPlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/BoxPlot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669820723614</updated>
-      <workItem from="1669820725184" duration="5716000" />
+      <workItem from="1669820725184" duration="8739000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -94,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669826187162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Box plots csv">
+      <created>1669826620919</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669826620919</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +128,10 @@
     <MESSAGE value="Computing laptimes" />
     <MESSAGE value="Computing races" />
     <MESSAGE value="Box plots" />
-    <option name="LAST_COMMIT_MESSAGE" value="Box plots" />
+    <MESSAGE value="Box plots csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Box plots csv" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

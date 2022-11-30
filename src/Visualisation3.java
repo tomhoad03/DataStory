@@ -1,6 +1,7 @@
+import ergast_models.BoxPlot;
 import ergast_models.LapTime;
 import ergast_models.Race;
-import ergast_models.RaceBoxPlot;
+import ergast_models.Season;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -33,38 +34,54 @@ public class Visualisation3 {
         }
         racesScanner.close();
 
-        // Calculate box plots
-        FileWriter racePlotWriter = new FileWriter("computed_dataset\\box_plots.csv");
-        racePlotWriter.write("raceId,max,UQ,median,LQ,min");
+        // Seasons
+        Scanner seasonsScanner = new Scanner(new File("ergast_dataset\\seasons.csv"));
+        ArrayList<Season> seasons = new ArrayList<>();
 
-        for (Race race : races) {
-            ArrayList<LapTime> raceLapTimes = new ArrayList<>();
-            for (LapTime lapTime : lapTimes) {
-                if (lapTime.getRaceId().equals(race.getRaceId())) {
-                    raceLapTimes.add(lapTime);
+        seasonsScanner.nextLine();
+        while (seasonsScanner.hasNextLine()) {
+            String season = seasonsScanner.nextLine();
+            seasons.add(new Season(season));
+        }
+        seasonsScanner.close();
+
+        // Calculate box plots
+        FileWriter seasonPlotWriter = new FileWriter("computed_dataset\\season_times_box_plots.csv");
+        seasonPlotWriter.write("year,max,UQ,median,LQ,min");
+
+        for (Season season : seasons) {
+            ArrayList<LapTime> seasonLapTimes = new ArrayList<>();
+            for (Race race : races) {
+                if (race.getYear().equals(season.getYear())) {
+                    for (LapTime lapTime : lapTimes) {
+                        if (lapTime.getRaceId().equals(race.getRaceId())) {
+                            seasonLapTimes.add(lapTime);
+                        }
+                    }
                 }
             }
-
-            raceLapTimes.sort(Comparator.comparingInt(LapTime::getMilliseconds));
-            int totalLaps = raceLapTimes.size();
+            seasonLapTimes.sort(Comparator.comparingInt(LapTime::getMilliseconds));
+            int totalLaps = seasonLapTimes.size();
 
             if (totalLaps > 0) {
                 int LQ = totalLaps / 4, median = LQ * 2, UQ = LQ * 3;
-                race.setBoxPlot(new RaceBoxPlot(raceLapTimes.get(totalLaps - 1).getMilliseconds(),
-                        raceLapTimes.get(UQ).getMilliseconds(),
-                        raceLapTimes.get(median).getMilliseconds(),
-                        raceLapTimes.get(LQ).getMilliseconds(),
-                        raceLapTimes.get(0).getMilliseconds()));
+                double IQR = seasonLapTimes.get(UQ).getMilliseconds() - seasonLapTimes.get(LQ).getMilliseconds();
+                double max = seasonLapTimes.get(UQ).getMilliseconds() + (1.5 * IQR), min = seasonLapTimes.get(LQ).getMilliseconds() - (1.5 * IQR);
+                season.setBoxPlot(new BoxPlot(max,
+                        seasonLapTimes.get(UQ).getMilliseconds(),
+                        seasonLapTimes.get(median).getMilliseconds(),
+                        seasonLapTimes.get(LQ).getMilliseconds(),
+                        min));
             } else {
-                race.setBoxPlot(new RaceBoxPlot(0,0,0,0,0));
+                season.setBoxPlot(new BoxPlot(0.0, 0, 0, 0, 0.0));
             }
 
-            if (race.hasBoxPlot()) {
-                RaceBoxPlot raceBoxPlot = race.getBoxPlot();
-                racePlotWriter.write("\n" + race.getRaceId() + "," + raceBoxPlot.getMax() + "," + raceBoxPlot.getUQ() + "," + raceBoxPlot.getMedian() + "," + raceBoxPlot.getLQ() + "," + raceBoxPlot.getMin());
+            if (season.hasBoxPlot()) {
+                BoxPlot raceBoxPlot = season.getBoxPlot();
+                seasonPlotWriter.write("\n" + season.getYear() + "," + raceBoxPlot.getMax() + "," + raceBoxPlot.getUQ() + "," + raceBoxPlot.getMedian() + "," + raceBoxPlot.getLQ() + "," + raceBoxPlot.getMin());
             }
         }
-        racePlotWriter.close();
+        seasonPlotWriter.close();
     }
 }
 

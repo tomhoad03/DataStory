@@ -1,13 +1,13 @@
 package ergast_models;
 
-public class RaceBoxPlot {
-    private final Integer max;
+public class BoxPlot {
+    private final Double max;
     private final Integer UQ;
     private final Integer median;
     private final Integer LQ;
-    private final Integer min;
+    private final Double min;
 
-    public RaceBoxPlot(Integer max, Integer UQ, Integer median, Integer LQ, Integer min) {
+    public BoxPlot(Double max, Integer UQ, Integer median, Integer LQ, Double min) {
         this.max = max;
         this.UQ = UQ;
         this.median = median;
@@ -17,7 +17,7 @@ public class RaceBoxPlot {
 
     @Override
     public String toString() {
-        return "RaceBoxPlot{" +
+        return "BoxPlot{" +
                 "max=" + max +
                 ", UQ=" + UQ +
                 ", median=" + median +
@@ -26,7 +26,7 @@ public class RaceBoxPlot {
                 '}';
     }
 
-    public Integer getMax() {
+    public Double getMax() {
         return max;
     }
 
@@ -42,7 +42,7 @@ public class RaceBoxPlot {
         return LQ;
     }
 
-    public Integer getMin() {
+    public Double getMin() {
         return min;
     }
 }
