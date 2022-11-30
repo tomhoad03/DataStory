@@ -7,6 +7,7 @@ public class Race {
     private final Integer circuitId;
     private final String name;
     private final String url;
+    private RaceBoxPlot boxPlot;
 
     public Race(String csvLine) {
         String[] splitLine = csvLine.split(",");
@@ -16,7 +17,7 @@ public class Race {
         this.round = Integer.valueOf(splitLine[2]);
         this.circuitId = Integer.valueOf(splitLine[3]);
         this.name = splitLine[4];
-        this.url = splitLine[8];
+        this.url = splitLine[7];
     }
 
     @Override
@@ -29,6 +30,10 @@ public class Race {
                 ", name='" + name + '\'' +
                 ", url='" + url + '\'' +
                 '}';
+    }
+
+    public boolean hasBoxPlot() {
+        return boxPlot.getMax() > 0;
     }
 
     public Integer getRaceId() {
@@ -53,5 +58,13 @@ public class Race {
 
     public String getUrl() {
         return url;
+    }
+
+    public void setBoxPlot(RaceBoxPlot boxPlot) {
+        this.boxPlot = boxPlot;
+    }
+
+    public RaceBoxPlot getBoxPlot() {
+        return boxPlot;
     }
 }
