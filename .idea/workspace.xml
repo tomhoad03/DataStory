@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Ergast API dataset">
-      <change afterPath="$PROJECT_DIR$/src/ergast_models/LapTime.java" afterDir="false" />
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Computing laptimes">
+      <change afterPath="$PROJECT_DIR$/src/ergast_models/Race.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/circuits.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/circuits.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/constructor_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/constructor_results.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/constructor_standings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/constructor_standings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/constructors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/constructors.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/driver_standings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/driver_standings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/drivers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/drivers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/lap_times.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/lap_times.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/pit_stops.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/pit_stops.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/qualifying.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/qualifying.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/races.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/races.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/results.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/seasons.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/seasons.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/sprint_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/sprint_results.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f1db_csv/status.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ergast_dataset/status.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visualisation3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visualisation3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/LapTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/LapTime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669820723614</updated>
-      <workItem from="1669820725184" duration="821000" />
+      <workItem from="1669820725184" duration="2781000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -89,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669820914087</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Computing laptimes">
+      <created>1669821841034</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821841034</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +102,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ergast API dataset" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ergast API dataset" />
+    <MESSAGE value="Computing laptimes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Computing laptimes" />
   </component>
 </project>

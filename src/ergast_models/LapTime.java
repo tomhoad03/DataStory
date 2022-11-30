@@ -5,7 +5,6 @@ public class LapTime {
     private final Integer driverId;
     private final Integer lap;
     private final Integer position;
-    private final String time;
     private final Integer milliseconds;
 
     public LapTime(String csvLine) {
@@ -15,7 +14,6 @@ public class LapTime {
         this.driverId = Integer.valueOf(splitLine[1]);
         this.lap = Integer.valueOf(splitLine[2]);
         this.position = Integer.valueOf(splitLine[3]);
-        this.time = splitLine[4];
         this.milliseconds = Integer.valueOf(splitLine[5]);
     }
 
@@ -26,7 +24,6 @@ public class LapTime {
                 ", driverId=" + driverId +
                 ", lap=" + lap +
                 ", position=" + position +
-                ", time='" + time + '\'' +
                 ", milliseconds=" + milliseconds +
                 '}';
     }
@@ -45,10 +42,6 @@ public class LapTime {
 
     public Integer getPosition() {
         return position;
-    }
-
-    public String getTime() {
-        return time;
     }
 
     public Integer getMilliseconds() {
