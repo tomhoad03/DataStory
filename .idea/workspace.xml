@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Race and season box plots">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/computed_dataset/race_times_box_plots.csv" beforeDir="false" afterPath="$PROJECT_DIR$/computed_dataset/race_times_box_plots.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/computed_dataset/season_times_box_plots.csv" beforeDir="false" afterPath="$PROJECT_DIR$/computed_dataset/season_times_box_plots.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VisualisationComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualisationComputer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ergast_models/BoxPlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/BoxPlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ergast_models/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/Race.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ergast_models/Season.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/Season.java" afterDir="false" />
-    </list>
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Race and season box plots" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,15 +26,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tomho/IdeaProjects/DataStory"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tomho/IdeaProjects/DataStory&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tomho\IdeaProjects\DataStory" />
@@ -79,6 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669820723614</updated>
       <workItem from="1669820725184" duration="11711000" />
+      <workItem from="1669842819880" duration="87000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
