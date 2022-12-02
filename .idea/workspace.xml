@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Tableau extra file">
-      <change afterPath="$PROJECT_DIR$/ergast_extension_dataset/eras.csv" afterDir="false" />
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Updated tables">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2022_13_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2022_13_23__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tableaus/DataStoryTableaus.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/DataStoryTableaus.twb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tableaus/~DataStoryTableaus__20204.twbr" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +36,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tomho/IdeaProjects/DataStory&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/IdeaProjects/DataStory&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tomho\IdeaProjects\DataStory" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\tomho\IdeaProjects\DataStory\tableaus" />
     </key>
   </component>
   <component name="RunManager" selected="Application.VisualisationComputer">
@@ -79,8 +75,10 @@
       <option name="presentableId" value="Default" />
       <updated>1669820723614</updated>
       <workItem from="1669820725184" duration="11711000" />
-      <workItem from="1669995646263" duration="900000" />
-      <workItem from="1669998180457" duration="2339000" />
+      <workItem from="1669842819880" duration="87000" />
+      <workItem from="1669982762407" duration="1608000" />
+      <workItem from="1670016821558" duration="968000" />
+      <workItem from="1670019431809" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -131,21 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669834992645</updated>
     </task>
-    <task id="LOCAL-00008" summary="Visualisation 3 mostly done">
-      <created>1669993619730</created>
+    <task id="LOCAL-00008" summary="Updated tables">
+      <created>1669982959116</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1669993619730</updated>
+      <updated>1669982959116</updated>
     </task>
-    <task id="LOCAL-00009" summary="Tableau extra file">
-      <created>1669994047678</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1669994047678</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,9 +161,8 @@
     <MESSAGE value="Box plots csv" />
     <MESSAGE value="Season box plots" />
     <MESSAGE value="Race and season box plots" />
-    <MESSAGE value="Visualisation 3 mostly done" />
-    <MESSAGE value="Tableau extra file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tableau extra file" />
+    <MESSAGE value="Updated tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated tables" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
