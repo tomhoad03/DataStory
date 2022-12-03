@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Updated tables">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2022_13_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2022_13_23__Changes_.xml" afterDir="false" />
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Visualisation 2">
+      <change afterPath="$PROJECT_DIR$/tableaus/~Visualisation2__9308.twbr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tableaus/DataStoryTableaus.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/DataStoryTableaus.twb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tableaus/Visualisation2.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/Visualisation2.twb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tableaus/Visualisation3.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/Visualisation3.twb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tableaus/~DataStoryTableaus__4176.twbr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tableaus/~Visualisation2__18844.twbr" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,20 +28,23 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IGvQplLSybQXxI2y0XR7NV4NbX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/IdeaProjects/DataStory&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Documents/IdeaProjects/DataStory"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tomho\IdeaProjects\DataStory" />
@@ -78,7 +84,8 @@
       <workItem from="1669842819880" duration="87000" />
       <workItem from="1669982762407" duration="1608000" />
       <workItem from="1670016821558" duration="968000" />
-      <workItem from="1670019431809" duration="597000" />
+      <workItem from="1670019431809" duration="1840000" />
+      <workItem from="1670022771801" duration="975000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -136,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669982959116</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Visualisation 2">
+      <created>1670020439837</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670020439837</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +168,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Ergast API dataset" />
     <MESSAGE value="Computing laptimes" />
     <MESSAGE value="Computing races" />
@@ -162,7 +177,8 @@
     <MESSAGE value="Season box plots" />
     <MESSAGE value="Race and season box plots" />
     <MESSAGE value="Updated tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated tables" />
+    <MESSAGE value="Visualisation 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Visualisation 2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
