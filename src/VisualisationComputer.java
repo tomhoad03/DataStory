@@ -1,7 +1,4 @@
-import ergast_models.BoxPlot;
-import ergast_models.LapTime;
-import ergast_models.Race;
-import ergast_models.Season;
+import ergast_models.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,17 +9,20 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class VisualisationComputer {
-    public static ArrayList<LapTime> lapTimes;
+    public static ArrayList<LapTime> lapTimes = new ArrayList<>();
     public static ArrayList<Race> races = new ArrayList<>();
     public static ArrayList<Season> seasons = new ArrayList<>();
+    public static ArrayList<Result> results = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         readLapTimes();
         readRaces();
         readSeasons();
+        readResults();
 
-        calculateRaceTimesBoxPlots();
-        calculateSeasonTimesBoxPlots();
+        // calculateRaceTimesBoxPlots();
+        // calculateSeasonTimesBoxPlots();
+        calculateNormalisedResults();
     }
 
     // Lap Times
@@ -63,6 +63,20 @@ public class VisualisationComputer {
         }
         seasonsScanner.close();
     }
+
+    // Results
+    public static void readResults() throws FileNotFoundException {
+        Scanner resultsScanner = new Scanner(new File("ergast_dataset\\results.csv"));
+        results = new ArrayList<>();
+
+        resultsScanner.nextLine();
+        while (resultsScanner.hasNextLine()) {
+            String result = resultsScanner.nextLine();
+            results.add(new Result(result));
+        }
+        resultsScanner.close();
+    }
+
 
     // Calculate race box plots
     public static void calculateRaceTimesBoxPlots() throws IOException {
@@ -148,6 +162,36 @@ public class VisualisationComputer {
             }
         }
         seasonPlotWriter.close();
+    }
+
+    // Calculate normalised results
+    public static void calculateNormalisedResults() throws IOException {
+        FileWriter normalisedResultsWriter = new FileWriter("computed_dataset\\normalised_results.csv");
+        normalisedResultsWriter.write("resultId,raceId,driverId,constructorId,position,points,laps,rank");
+
+        for (Result result : results) {
+            double fastestLapPoint = 0.0;
+            if (result.getRank() == 1) {
+                fastestLapPoint = 1.0;
+            }
+
+            switch (result.getPosition()) {
+                case 1 -> result.setPoints(25.0 + fastestLapPoint);
+                case 2 -> result.setPoints(18.0 + fastestLapPoint);
+                case 3 -> result.setPoints(15.0 + fastestLapPoint);
+                case 4 -> result.setPoints(12.0 + fastestLapPoint);
+                case 5 -> result.setPoints(10.0 + fastestLapPoint);
+                case 6 -> result.setPoints(8.0 + fastestLapPoint);
+                case 7 -> result.setPoints(6.0 + fastestLapPoint);
+                case 8 -> result.setPoints(4.0 + fastestLapPoint);
+                case 9 -> result.setPoints(2.0 + fastestLapPoint);
+                case 10 -> result.setPoints(1.0 + fastestLapPoint);
+            }
+
+            normalisedResultsWriter.write("\n" + result.getResultId() + "," + result.getRaceId() + "," + result.getDriverId() + "," + result.getConstructorId() + "," + result.getPosition() + "," + result.getPoints() + "," + result.getLaps() + "," + result.getRank());
+        }
+        
+        normalisedResultsWriter.close();
     }
 }
 
