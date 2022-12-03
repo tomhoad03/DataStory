@@ -22,9 +22,9 @@ public class VisualisationComputer {
         readResults();
         readRaceOvertakes();
 
-        // calculateRaceTimesBoxPlots();
-        // calculateSeasonTimesBoxPlots();
-        // calculateNormalisedResults();
+        calculateRaceTimesBoxPlots();
+        calculateSeasonTimesBoxPlots();
+        calculateNormalisedResults();
         calculateRaceOvertakes();
     }
 
