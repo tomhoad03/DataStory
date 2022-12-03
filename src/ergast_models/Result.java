@@ -6,7 +6,8 @@ public class Result {
     private final Integer driverId;
     private final Integer constructorId;
     private final Integer position;
-    private Double points;
+    private final Double points;
+    private Integer normalisedPoints = 0;
     private final Integer laps;
     private final Integer rank;
 
@@ -47,6 +48,7 @@ public class Result {
                 ", constructorId=" + constructorId +
                 ", position=" + position +
                 ", points=" + points +
+                ", normalisedPoints=" + normalisedPoints +
                 ", laps=" + laps +
                 ", rank=" + rank +
                 '}';
@@ -72,12 +74,16 @@ public class Result {
         return position;
     }
 
-    public void setPoints(Double points) {
-        this.points = points;
-    }
-
     public Double getPoints() {
         return points;
+    }
+
+    public void setNormalisedPoints(Integer normalisedPoints) {
+        this.normalisedPoints = normalisedPoints;
+    }
+
+    public Integer getNormalisedPoints() {
+        return normalisedPoints;
     }
 
     public Integer getLaps() {
