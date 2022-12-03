@@ -170,22 +170,26 @@ public class VisualisationComputer {
         normalisedResultsWriter.write("resultId,raceId,driverId,constructorId,position,points,laps,rank");
 
         for (Result result : results) {
-            double fastestLapPoint = 0.0;
-            if (result.getRank() == 1) {
-                fastestLapPoint = 1.0;
-            }
+            if (result.getLaps() > 2) {
+                double fastestLapPoint = 0.0;
+                if (result.getRank() == 1) {
+                    fastestLapPoint = 1.0;
+                }
 
-            switch (result.getPosition()) {
-                case 1 -> result.setPoints(25.0 + fastestLapPoint);
-                case 2 -> result.setPoints(18.0 + fastestLapPoint);
-                case 3 -> result.setPoints(15.0 + fastestLapPoint);
-                case 4 -> result.setPoints(12.0 + fastestLapPoint);
-                case 5 -> result.setPoints(10.0 + fastestLapPoint);
-                case 6 -> result.setPoints(8.0 + fastestLapPoint);
-                case 7 -> result.setPoints(6.0 + fastestLapPoint);
-                case 8 -> result.setPoints(4.0 + fastestLapPoint);
-                case 9 -> result.setPoints(2.0 + fastestLapPoint);
-                case 10 -> result.setPoints(1.0 + fastestLapPoint);
+                switch (result.getPosition()) {
+                    case 1 -> result.setPoints(25.0 + fastestLapPoint);
+                    case 2 -> result.setPoints(18.0 + fastestLapPoint);
+                    case 3 -> result.setPoints(15.0 + fastestLapPoint);
+                    case 4 -> result.setPoints(12.0 + fastestLapPoint);
+                    case 5 -> result.setPoints(10.0 + fastestLapPoint);
+                    case 6 -> result.setPoints(8.0 + fastestLapPoint);
+                    case 7 -> result.setPoints(6.0 + fastestLapPoint);
+                    case 8 -> result.setPoints(4.0 + fastestLapPoint);
+                    case 9 -> result.setPoints(2.0 + fastestLapPoint);
+                    case 10 -> result.setPoints(1.0 + fastestLapPoint);
+                }
+            } else {
+                result.setPoints(0.0);
             }
 
             normalisedResultsWriter.write("\n" + result.getResultId() + "," + result.getRaceId() + "," + result.getDriverId() + "," + result.getConstructorId() + "," + result.getPosition() + "," + result.getPoints() + "," + result.getLaps() + "," + result.getRank());
