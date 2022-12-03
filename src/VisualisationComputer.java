@@ -13,24 +13,26 @@ public class VisualisationComputer {
     public static ArrayList<Race> races = new ArrayList<>();
     public static ArrayList<Season> seasons = new ArrayList<>();
     public static ArrayList<Result> results = new ArrayList<>();
+    public static ArrayList<RaceOvertake> raceOvertakes = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         readLapTimes();
         readRaces();
         readSeasons();
         readResults();
+        readRaceOvertakes();
 
         // calculateRaceTimesBoxPlots();
         // calculateSeasonTimesBoxPlots();
-        calculateNormalisedResults();
+        // calculateNormalisedResults();
+        calculateRaceOvertakes();
     }
 
     // Lap Times
     public static void readLapTimes() throws FileNotFoundException {
         Scanner lapTimesScanner = new Scanner(new File("ergast_dataset\\lap_times.csv"));
-        lapTimes = new ArrayList<>();
-
         lapTimesScanner.nextLine();
+
         while (lapTimesScanner.hasNextLine()) {
             String lapTime = lapTimesScanner.nextLine();
             lapTimes.add(new LapTime(lapTime));
@@ -41,9 +43,8 @@ public class VisualisationComputer {
     // Races
     public static void readRaces() throws FileNotFoundException {
         Scanner racesScanner = new Scanner(new File("ergast_dataset\\races.csv"));
-        races = new ArrayList<>();
-
         racesScanner.nextLine();
+
         while (racesScanner.hasNextLine()) {
             String race = racesScanner.nextLine();
             races.add(new Race(race));
@@ -54,9 +55,8 @@ public class VisualisationComputer {
     // Seasons
     public static void readSeasons() throws FileNotFoundException {
         Scanner seasonsScanner = new Scanner(new File("ergast_dataset\\seasons.csv"));
-        seasons = new ArrayList<>();
-
         seasonsScanner.nextLine();
+
         while (seasonsScanner.hasNextLine()) {
             String season = seasonsScanner.nextLine();
             seasons.add(new Season(season));
@@ -67,15 +67,30 @@ public class VisualisationComputer {
     // Results
     public static void readResults() throws FileNotFoundException {
         Scanner resultsScanner = new Scanner(new File("ergast_dataset\\results.csv"));
-        results = new ArrayList<>();
-
         resultsScanner.nextLine();
+
         while (resultsScanner.hasNextLine()) {
             String result = resultsScanner.nextLine();
             results.add(new Result(result));
         }
         resultsScanner.close();
     }
+
+    // Race overtakes
+    public static void readRaceOvertakes() throws FileNotFoundException {
+        Scanner raceOvertakesScanner = new Scanner(new File("overtaking_dataset\\race_overtakes.csv"));
+        raceOvertakesScanner.nextLine();
+
+        while (raceOvertakesScanner.hasNextLine()) {
+            String raceOvertake = raceOvertakesScanner.nextLine();
+            RaceOvertake model = new RaceOvertake(raceOvertake);
+            if (!model.getName().equals("Season") && !model.getName().contains("Sprint")) {
+                raceOvertakes.add(model);
+            }
+        }
+        raceOvertakesScanner.close();
+    }
+
 
 
     // Calculate race box plots
@@ -196,6 +211,28 @@ public class VisualisationComputer {
         }
         
         normalisedResultsWriter.close();
+    }
+
+    // Calculate race overtakes
+    public static void calculateRaceOvertakes() throws IOException {
+        FileWriter raceOvertakesWriter = new FileWriter("computed_dataset\\race_overtakes.csv");
+        raceOvertakesWriter.write("raceId,year,round,circuitId,name,url,overtakes");
+
+        races.sort(Comparator.comparingInt(Race::getYear));
+        int count = 0;
+
+        for (Race race : races) {
+            RaceOvertake raceOvertake = raceOvertakes.get(count);
+
+            if (race.getYear().equals(raceOvertake.getYear())) {
+                race.setOvertakes(raceOvertake.getOvertakes());
+                count++;
+
+                raceOvertakesWriter.write("\n" + race.getRaceId() + "," + race.getYear() + "," + race.getRound() + "," + race.getCircuitId() + "," + race.getName() + "," + race.getUrl() + "," + race.getOvertakes());
+            }
+        }
+
+        raceOvertakesWriter.close();
     }
 }
 

@@ -8,6 +8,7 @@ public class Race {
     private final String name;
     private final String url;
     private BoxPlot boxPlot;
+    private Integer overtakes;
 
     public Race(String csvLine) {
         String[] splitLine = csvLine.split(",");
@@ -67,5 +68,13 @@ public class Race {
 
     public BoxPlot getBoxPlot() {
         return boxPlot;
+    }
+
+    public void setOvertakes(Integer overtakes) {
+        this.overtakes = overtakes;
+    }
+
+    public Integer getOvertakes() {
+        return overtakes;
     }
 }
