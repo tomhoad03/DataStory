@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="No laps no points">
-      <change afterPath="$PROJECT_DIR$/tableaus/~Visualisation2__6256.twbr" afterDir="false" />
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Visualisation 2 tableau">
+      <change afterPath="$PROJECT_DIR$/tableaus/~Visualisation2__4740.twbr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/computed_dataset/normalised_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/computed_dataset/normalised_results.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VisualisationComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualisationComputer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ergast_models/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tableaus/Visualisation2.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/Visualisation2.twb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +86,7 @@
       <workItem from="1670022771801" duration="987000" />
       <workItem from="1670067358294" duration="1091000" />
       <workItem from="1670068874140" duration="31000" />
-      <workItem from="1670069113433" duration="2273000" />
+      <workItem from="1670069113433" duration="3082000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -174,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670069834092</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Visualisation 2 tableau">
+      <created>1670072131207</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670072131207</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +210,8 @@
     <MESSAGE value="Data" />
     <MESSAGE value="modern points system" />
     <MESSAGE value="No laps no points" />
-    <option name="LAST_COMMIT_MESSAGE" value="No laps no points" />
+    <MESSAGE value="Visualisation 2 tableau" />
+    <option name="LAST_COMMIT_MESSAGE" value="Visualisation 2 tableau" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

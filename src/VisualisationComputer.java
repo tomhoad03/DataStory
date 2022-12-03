@@ -170,22 +170,26 @@ public class VisualisationComputer {
         normalisedResultsWriter.write("resultId,raceId,driverId,constructorId,position,points,normalisedPoints,laps,rank");
 
         for (Result result : results) {
-            int fastestLapPoint = 0;
-            if (result.getRank() == 1) {
-                fastestLapPoint++;
-            }
+            if (result.getLaps() > 2) {
+                int fastestLapPoint = 0;
+                if (result.getRank() == 1) {
+                    fastestLapPoint++;
+                }
 
-            switch (result.getPosition()) {
-                case 1 -> result.setNormalisedPoints(25 + fastestLapPoint);
-                case 2 -> result.setNormalisedPoints(18 + fastestLapPoint);
-                case 3 -> result.setNormalisedPoints(15 + fastestLapPoint);
-                case 4 -> result.setNormalisedPoints(12 + fastestLapPoint);
-                case 5 -> result.setNormalisedPoints(10 + fastestLapPoint);
-                case 6 -> result.setNormalisedPoints(8 + fastestLapPoint);
-                case 7 -> result.setNormalisedPoints(6 + fastestLapPoint);
-                case 8 -> result.setNormalisedPoints(4 + fastestLapPoint);
-                case 9 -> result.setNormalisedPoints(2 + fastestLapPoint);
-                case 10 -> result.setNormalisedPoints(1 + fastestLapPoint);
+                switch (result.getPosition()) {
+                    case 1 -> result.setNormalisedPoints(25 + fastestLapPoint);
+                    case 2 -> result.setNormalisedPoints(18 + fastestLapPoint);
+                    case 3 -> result.setNormalisedPoints(15 + fastestLapPoint);
+                    case 4 -> result.setNormalisedPoints(12 + fastestLapPoint);
+                    case 5 -> result.setNormalisedPoints(10 + fastestLapPoint);
+                    case 6 -> result.setNormalisedPoints(8 + fastestLapPoint);
+                    case 7 -> result.setNormalisedPoints(6 + fastestLapPoint);
+                    case 8 -> result.setNormalisedPoints(4 + fastestLapPoint);
+                    case 9 -> result.setNormalisedPoints(2 + fastestLapPoint);
+                    case 10 -> result.setNormalisedPoints(1 + fastestLapPoint);
+                }
+            } else {
+                result.setNormalisedPoints(0);
             }
 
             normalisedResultsWriter.write("\n" + result.getResultId() + "," + result.getRaceId() + "," + result.getDriverId() + "," + result.getConstructorId() + "," + result.getPosition() + "," + result.getPoints() + "," + result.getNormalisedPoints() + "," + result.getLaps() + "," + result.getRank());
