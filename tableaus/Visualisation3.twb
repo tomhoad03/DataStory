@@ -2101,8 +2101,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1284zfi0chjhyw11b6sd20hmkswn].[Longitude (generated)]' field-type='quantitative' max='57147384.00634177' min='23979643.130252641' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1284zfi0chjhyw11b6sd20hmkswn].[Latitude (generated)]' field-type='quantitative' max='12282954.342051428' min='-5332959.8576918505' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1284zfi0chjhyw11b6sd20hmkswn].[Longitude (generated)]' field-type='quantitative' max='59124137.087213486' min='24595841.525044326' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1284zfi0chjhyw11b6sd20hmkswn].[Latitude (generated)]' field-type='quantitative' max='13700132.800131697' min='-4638393.6119893966' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.1284zfi0chjhyw11b6sd20hmkswn].[avg:overtakes:qk]' palette='orange_blue_white_diverging_10_0' type='interpolated' />
@@ -2370,72 +2370,70 @@
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
           <zone h='98726' id='24' param='horz' type-v2='layout-flow' w='99368' x='316' y='637'>
-            <zone h='98726' id='7' param='horz' type-v2='layout-flow' w='99368' x='316' y='637'>
-              <zone h='98726' id='5' type-v2='layout-basic' w='99368' x='316' y='637'>
-                <zone h='55175' id='3' name='RaceTimesBoxPlots' w='99368' x='316' y='637'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-                <zone h='43551' id='9' name='SeasonTimesBoxPlots' w='49684' x='316' y='55812'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-                <zone h='43551' id='12' name='AverageOvertakesMap' w='37135' x='50000' y='55812'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='950' h='29857' id='8' is-fixed='true' mode='radiolist' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:surname:nk]' type-v2='filter' w='6745' x='92939' y='69506'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='609' h='8996' id='16' is-fixed='true' mode='radiolist' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:era:nk]' type-v2='filter' values='database' w='6745' x='92939' y='60510'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='57' h='4698' id='13' is-fixed='true' name='AverageOvertakesMap' pane-specification-id='0' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[avg:overtakes:qk]' type-v2='color' w='6745' x='92939' y='55812'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='60' h='4698' id='11' is-fixed='true' name='SeasonTimesBoxPlots' pane-specification-id='0' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[sum:position:qk]' type-v2='color' w='5804' x='87135' y='55812'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-                <zone h='38853' id='25' mode='radiolist' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:location:nk]' type-v2='filter' values='database' w='5804' x='87135' y='60510'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
+            <zone h='98726' id='5' type-v2='layout-basic' w='99368' x='316' y='637'>
+              <zone h='55175' id='3' name='RaceTimesBoxPlots' w='99368' x='316' y='637'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='43551' id='9' name='SeasonTimesBoxPlots' w='49684' x='316' y='55812'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='43551' id='12' name='AverageOvertakesMap' w='37133' x='50000' y='55812'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='950' h='29857' id='8' is-fixed='true' mode='radiolist' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:surname:nk]' type-v2='filter' w='6747' x='92937' y='69506'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='609' h='8996' id='16' is-fixed='true' mode='radiolist' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:era:nk]' type-v2='filter' values='database' w='6747' x='92937' y='60510'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='57' h='4698' id='13' is-fixed='true' name='AverageOvertakesMap' pane-specification-id='0' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[avg:overtakes:qk]' type-v2='color' w='6747' x='92937' y='55812'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='60' h='4698' id='11' is-fixed='true' name='SeasonTimesBoxPlots' pane-specification-id='0' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[sum:position:qk]' type-v2='color' w='5804' x='87133' y='55812'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='38853' id='25' mode='radiolist' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:location:nk]' type-v2='filter' values='database' w='5804' x='87133' y='60510'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
               </zone>
             </zone>
           </zone>
@@ -2451,9 +2449,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1200' minheight='1200' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='33' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98726' id='32' param='vert' type-v2='layout-flow' w='99368' x='316' y='637'>
-                <zone fixed-size='950' h='29857' id='8' mode='dropdown' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:surname:nk]' type-v2='filter' w='6745' x='92939' y='69506'>
+            <zone h='100000' id='37' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98726' id='36' param='vert' type-v2='layout-flow' w='99368' x='316' y='637'>
+                <zone fixed-size='950' h='29857' id='8' mode='dropdown' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:surname:nk]' type-v2='filter' w='6747' x='92937' y='69506'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2462,7 +2460,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='609' h='8996' id='16' mode='dropdown' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:era:nk]' type-v2='filter' values='database' w='6745' x='92939' y='60510'>
+                <zone fixed-size='609' h='8996' id='16' mode='dropdown' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:era:nk]' type-v2='filter' values='database' w='6747' x='92937' y='60510'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2471,7 +2469,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='38853' id='25' mode='dropdown' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:location:nk]' type-v2='filter' values='database' w='5804' x='87135' y='60510'>
+                <zone h='38853' id='25' mode='dropdown' name='RaceTimesBoxPlots' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[none:location:nk]' type-v2='filter' values='database' w='5804' x='87133' y='60510'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2498,7 +2496,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='60' h='4698' id='11' name='SeasonTimesBoxPlots' pane-specification-id='0' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[sum:position:qk]' type-v2='color' w='5804' x='87135' y='55812'>
+                <zone fixed-size='60' h='4698' id='11' name='SeasonTimesBoxPlots' pane-specification-id='0' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[sum:position:qk]' type-v2='color' w='5804' x='87133' y='55812'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2507,7 +2505,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='43551' id='12' is-fixed='true' name='AverageOvertakesMap' w='37135' x='50000' y='55812'>
+                <zone fixed-size='280' h='43551' id='12' is-fixed='true' name='AverageOvertakesMap' w='37133' x='50000' y='55812'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2516,7 +2514,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='57' h='4698' id='13' name='AverageOvertakesMap' pane-specification-id='0' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[avg:overtakes:qk]' type-v2='color' w='6745' x='92939' y='55812'>
+                <zone fixed-size='57' h='4698' id='13' name='AverageOvertakesMap' pane-specification-id='0' param='[federated.1284zfi0chjhyw11b6sd20hmkswn].[avg:overtakes:qk]' type-v2='color' w='6747' x='92937' y='55812'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2681,7 +2679,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='12' />
+      <active id='16' />
       <simple-id uuid='{4501D545-5670-4047-9D42-CC5A891E59CD}' />
     </window>
   </windows>
