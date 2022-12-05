@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Not working championship calculations" />
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Tableau extra file">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2022_17_14__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2022_17_14__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computed_dataset/constructor_championships.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/computed_dataset/driver_championships.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/computed_dataset/normalised_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/computed_dataset/normalised_results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computed_dataset/race_overtakes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/computed_dataset/race_overtakes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VisualisationComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualisationComputer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/ConstructorStanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/ConstructorStanding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/DriverStanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/DriverStanding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tableaus/~DataStoryTableaus__15812.twbr" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,35 +32,26 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IGvQplLSybQXxI2y0XR7NV4NbX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/IdeaProjects/DataStory&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tomho/IdeaProjects/DataStory&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Pair" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tomho\IdeaProjects\DataStory" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Documents\IdeaProjects\DataStory\overtaking_dataset" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ergast_models" />
+      <recent name="C:\Users\tomho\IdeaProjects\DataStory\tableaus" />
     </key>
   </component>
   <component name="RunManager" selected="Application.VisualisationComputer">
@@ -83,18 +85,8 @@
       <option name="presentableId" value="Default" />
       <updated>1669820723614</updated>
       <workItem from="1669820725184" duration="11711000" />
-      <workItem from="1669842819880" duration="87000" />
-      <workItem from="1669982762407" duration="1608000" />
-      <workItem from="1670016821558" duration="968000" />
-      <workItem from="1670019431809" duration="1840000" />
-      <workItem from="1670022771801" duration="987000" />
-      <workItem from="1670067358294" duration="1091000" />
-      <workItem from="1670068874140" duration="31000" />
-      <workItem from="1670069113433" duration="3700000" />
-      <workItem from="1670107033933" duration="3465000" />
-      <workItem from="1670112254836" duration="134000" />
-      <workItem from="1670192372542" duration="1412000" />
-      <workItem from="1670246150490" duration="5337000" />
+      <workItem from="1669995646263" duration="900000" />
+      <workItem from="1669998180457" duration="2339000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -145,91 +137,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669834992645</updated>
     </task>
-    <task id="LOCAL-00008" summary="Updated tables">
-      <created>1669982959116</created>
+    <task id="LOCAL-00008" summary="Visualisation 3 mostly done">
+      <created>1669993619730</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1669982959116</updated>
+      <updated>1669993619730</updated>
     </task>
-    <task id="LOCAL-00009" summary="Visualisation 2">
-      <created>1670020439837</created>
+    <task id="LOCAL-00009" summary="Tableau extra file">
+      <created>1669994047678</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1670020439837</updated>
+      <updated>1669994047678</updated>
     </task>
-    <task id="LOCAL-00010" summary="Data">
-      <created>1670025939893</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1670025939893</updated>
-    </task>
-    <task id="LOCAL-00011" summary="modern points system">
-      <created>1670069686423</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1670069686423</updated>
-    </task>
-    <task id="LOCAL-00012" summary="No laps no points">
-      <created>1670069834092</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1670069834092</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Visualisation 2 tableau">
-      <created>1670072131207</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1670072131207</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Visualisation 2 tableau improvements">
-      <created>1670074183515</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1670074183515</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Race overtakes">
-      <created>1670108562181</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1670108562181</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Visualisation 3 complete">
-      <created>1670111867799</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1670111867799</updated>
-    </task>
-    <task id="LOCAL-00017" summary="4/12 progress">
-      <created>1670193909139</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1670193909139</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Driver championships">
-      <created>1670249523776</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1670249523776</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Not working championship calculations">
-      <created>1670251530387</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1670251530387</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +169,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Ergast API dataset" />
     <MESSAGE value="Computing laptimes" />
     <MESSAGE value="Computing races" />
@@ -255,19 +176,9 @@
     <MESSAGE value="Box plots csv" />
     <MESSAGE value="Season box plots" />
     <MESSAGE value="Race and season box plots" />
-    <MESSAGE value="Updated tables" />
-    <MESSAGE value="Visualisation 2" />
-    <MESSAGE value="Data" />
-    <MESSAGE value="modern points system" />
-    <MESSAGE value="No laps no points" />
-    <MESSAGE value="Visualisation 2 tableau" />
-    <MESSAGE value="Visualisation 2 tableau improvements" />
-    <MESSAGE value="Race overtakes" />
-    <MESSAGE value="Visualisation 3 complete" />
-    <MESSAGE value="4/12 progress" />
-    <MESSAGE value="Driver championships" />
-    <MESSAGE value="Not working championship calculations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Not working championship calculations" />
+    <MESSAGE value="Visualisation 3 mostly done" />
+    <MESSAGE value="Tableau extra file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tableau extra file" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

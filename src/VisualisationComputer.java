@@ -16,6 +16,7 @@ public class VisualisationComputer {
     public static ArrayList<Result> results = new ArrayList<>();
     public static ArrayList<RaceOvertake> raceOvertakes = new ArrayList<>();
     public static ArrayList<DriverStanding> driverStandings = new ArrayList<>();
+    public static ArrayList<ConstructorStanding> constructorStandings = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         readLapTimes();
@@ -24,6 +25,7 @@ public class VisualisationComputer {
         readResults();
         readRaceOvertakes();
         readDriverStandings();
+        readConstructorStandings();
 
         calculateRaceTimesBoxPlots();
         calculateSeasonTimesBoxPlots();
@@ -105,6 +107,18 @@ public class VisualisationComputer {
             driverStandings.add(new DriverStanding(driverStanding));
         }
         driverStandingsScanner.close();
+    }
+
+    // Race constructor standings
+    public static void readConstructorStandings() throws FileNotFoundException {
+        Scanner constructorStandingsScanner = new Scanner(new File("ergast_dataset\\constructor_standings.csv"));
+        constructorStandingsScanner.nextLine();
+
+        while (constructorStandingsScanner.hasNextLine()) {
+            String constructorStanding = constructorStandingsScanner.nextLine();
+            constructorStandings.add(new ConstructorStanding(constructorStanding));
+        }
+        constructorStandingsScanner.close();
     }
 
     // Calculate race box plots
@@ -251,8 +265,8 @@ public class VisualisationComputer {
 
     // Calculate championships won
     public static void calculateChampionships() throws IOException {
-        FileWriter driverChampionshipsWriter = new FileWriter("computed_dataset\\driver_championships.csv");
-        driverChampionshipsWriter.write("driverId,constructorId,championships");
+        FileWriter championshipsWriter = new FileWriter("computed_dataset\\championships.csv");
+        championshipsWriter.write("year,driverId,driverChampionshipWins,driverChampionshipPoints,constructorId,constructorChampionshipWins,constructorChampionshipPoints");
 
         races.sort(Comparator.comparingInt(Race::getRound));
         races.sort(Comparator.comparingInt(Race::getYear));
@@ -268,33 +282,43 @@ public class VisualisationComputer {
             }
         }
 
-        ArrayList<Pair> driverChampions = new ArrayList<>();
+        ArrayList<String> driverChampions = new ArrayList<>();
+        ArrayList<String> constructorChampions = new ArrayList<>();
+        ArrayList<Integer> winningRaces = new ArrayList<>();
+
         for (DriverStanding driverStanding : driverStandings) {
             if (driverStanding.getPosition() == 1 && finalRounds.contains(driverStanding.getRaceId())) {
-                for (Result result : results) {
-                    if (result.getRaceId().equals(driverStanding.getRaceId()) && result.getDriverId().equals(driverStanding.getDriverId())) {
-                        driverChampions.add(new Pair(driverStanding.getDriverId(), result.getConstructorId()));
+                for (Race race : races) {
+                    if (race.getRaceId().equals(driverStanding.getRaceId())) {
+                        winningRaces.add(race.getRaceId());
+                        driverChampions.add("\n" + race.getYear() + "," + driverStanding.getDriverId()  + "," + driverStanding.getWins() + "," + driverStanding.getPoints());
+                        year++;
+                        break;
                     }
                 }
             }
         }
 
-        driverChampions.sort(Comparator.comparingInt(Pair::driverId));
-        int driverWinCount = 0, currentDriverId = -1, currentConstructorId = -1;
-
-        for (Pair driverChampion : driverChampions) {
-            if (driverChampion.driverId() != currentDriverId) {
-                if (currentDriverId != -1) {
-                    driverChampionshipsWriter.write("\n" + currentDriverId + "," + currentConstructorId + "," + driverWinCount);
+        for (ConstructorStanding constructorStanding : constructorStandings) {
+            if (constructorStanding.getPosition() == 1 && finalRounds.contains(constructorStanding.getRaceId())) {
+                for (Race race : races) {
+                    if (race.getRaceId().equals(constructorStanding.getRaceId())) {
+                        winningRaces.add(race.getRaceId());
+                        constructorChampions.add("," + constructorStanding.getConstructorId()  + "," + constructorStanding.getWins() + "," + constructorStanding.getPoints());
+                        break;
+                    }
                 }
-                currentDriverId = driverChampion.driverId();
-                currentConstructorId = driverChampion.constructorId();
-                driverWinCount = 0;
             }
-            driverWinCount++;
         }
-        driverChampionshipsWriter.write("\n" + currentDriverId + "," + currentConstructorId  + "," + driverWinCount);
 
-        driverChampionshipsWriter.close();
+        System.out.println(driverChampions.size() + "," + constructorChampions.size());
+        winningRaces.sort(Comparator.comparingInt(o -> o));
+        System.out.println(winningRaces);
+
+        for (int i = 0; i < constructorChampions.size(); i++) {
+            championshipsWriter.write(driverChampions.get(i) + constructorChampions.get(i));
+        }
+
+        championshipsWriter.close();
     }
 }

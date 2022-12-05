@@ -5,6 +5,7 @@ public class ConstructorStanding {
     private final Integer raceId;
     private final Integer constructorId;
     private final Integer position;
+    private final Double points;
     private final Integer wins;
 
     public ConstructorStanding(String csvLine) {
@@ -14,6 +15,7 @@ public class ConstructorStanding {
         this.raceId = Integer.valueOf(splitLine[1]);
         this.constructorId = Integer.valueOf(splitLine[2]);
         this.position = Integer.valueOf(splitLine[4]);
+        this.points = Double.valueOf(splitLine[3]);
         this.wins = Integer.valueOf(splitLine[6]);
     }
 
@@ -24,11 +26,12 @@ public class ConstructorStanding {
                 ", raceId=" + raceId +
                 ", constructorId=" + constructorId +
                 ", position=" + position +
+                ", points=" + points +
                 ", wins=" + wins +
                 '}';
     }
 
-    public Integer getDriverStandingsId() {
+    public Integer getConstructorStandingsId() {
         return constructorStandingsId;
     }
 
@@ -42,6 +45,10 @@ public class ConstructorStanding {
 
     public Integer getPosition() {
         return position;
+    }
+
+    public Double getPoints() {
+        return points;
     }
 
     public Integer getWins() {
