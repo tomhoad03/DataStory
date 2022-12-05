@@ -289,7 +289,7 @@ public class VisualisationComputer {
         for (DriverStanding driverStanding : driverStandings) {
             if (driverStanding.getPosition() == 1 && finalRounds.contains(driverStanding.getRaceId())) {
                 for (Race race : races) {
-                    if (race.getRaceId().equals(driverStanding.getRaceId())) {
+                    if (race.getRaceId().equals(driverStanding.getRaceId()) && (driverStanding.getRaceId() < 776 || driverStanding.getRaceId() > 840)) {
                         winningRaces.add(race.getRaceId());
                         driverChampions.add("\n" + race.getYear() + "," + driverStanding.getDriverId()  + "," + driverStanding.getWins() + "," + driverStanding.getPoints());
                         year++;
@@ -311,11 +311,8 @@ public class VisualisationComputer {
             }
         }
 
-        System.out.println(driverChampions.size() + "," + constructorChampions.size());
-        winningRaces.sort(Comparator.comparingInt(o -> o));
-        System.out.println(winningRaces);
-
-        for (int i = 0; i < constructorChampions.size(); i++) {
+        // 776 to 840 missing from constructors standings (1950-1956)
+        for (int i = 0; i < driverChampions.size(); i++) {
             championshipsWriter.write(driverChampions.get(i) + constructorChampions.get(i));
         }
 
