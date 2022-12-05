@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 public class VisualisationComputer {
     public static ArrayList<LapTime> lapTimes = new ArrayList<>();
@@ -14,6 +12,7 @@ public class VisualisationComputer {
     public static ArrayList<Season> seasons = new ArrayList<>();
     public static ArrayList<Result> results = new ArrayList<>();
     public static ArrayList<RaceOvertake> raceOvertakes = new ArrayList<>();
+    public static ArrayList<DriverStanding> driverStandings = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         readLapTimes();
@@ -21,11 +20,13 @@ public class VisualisationComputer {
         readSeasons();
         readResults();
         readRaceOvertakes();
+        readDriverStandings();
 
         calculateRaceTimesBoxPlots();
         calculateSeasonTimesBoxPlots();
         calculateNormalisedResults();
         calculateRaceOvertakes();
+        calculateChampionships();
     }
 
     // Lap Times
@@ -91,7 +92,17 @@ public class VisualisationComputer {
         raceOvertakesScanner.close();
     }
 
+    // Race driver standings
+    public static void readDriverStandings() throws FileNotFoundException {
+        Scanner driverStandingsScanner = new Scanner(new File("ergast_dataset\\driver_standings.csv"));
+        driverStandingsScanner.nextLine();
 
+        while (driverStandingsScanner.hasNextLine()) {
+            String driverStanding = driverStandingsScanner.nextLine();
+            driverStandings.add(new DriverStanding(driverStanding));
+        }
+        driverStandingsScanner.close();
+    }
 
     // Calculate race box plots
     public static void calculateRaceTimesBoxPlots() throws IOException {
@@ -234,5 +245,48 @@ public class VisualisationComputer {
 
         raceOvertakesWriter.close();
     }
-}
 
+    // Calculate championships won
+    public static void calculateChampionships() throws IOException {
+        FileWriter driverChampionshipsWriter = new FileWriter("computed_dataset\\driver_championships.csv");
+        driverChampionshipsWriter.write("driverId,championships");
+
+        races.sort(Comparator.comparingInt(Race::getRound));
+        races.sort(Comparator.comparingInt(Race::getYear));
+        Collections.reverse(races);
+
+        ArrayList<Integer> finalRounds = new ArrayList<>();
+        int year = 2022;
+
+        for (Race race : races) {
+            if (race.getYear() < year) {
+                finalRounds.add(race.getRaceId());
+                year--;
+            }
+        }
+
+        ArrayList<Integer> driverChampions = new ArrayList<>();
+        for (DriverStanding driverStanding : driverStandings) {
+            if (driverStanding.getPosition() == 1 && finalRounds.contains(driverStanding.getRaceId())) {
+                driverChampions.add(driverStanding.getDriverId());
+            }
+        }
+
+        driverChampions.sort(Comparator.comparingInt(o -> o));
+        int winCount = 0, currentDriverId = -1;
+
+        for (Integer driverChampion : driverChampions) {
+            if (driverChampion != currentDriverId) {
+                if (currentDriverId != -1) {
+                    driverChampionshipsWriter.write("\n" + currentDriverId + "," + winCount);
+                }
+                currentDriverId = driverChampion;
+                winCount = 0;
+            }
+            winCount++;
+        }
+        driverChampionshipsWriter.write("\n" + currentDriverId + "," + winCount);
+
+        driverChampionshipsWriter.close();
+    }
+}

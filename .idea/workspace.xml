@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Visualisation 3 complete">
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="4/12 progress">
+      <change afterPath="$PROJECT_DIR$/computed_dataset/driver_championships.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ergast_models/DriverStanding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tableaus/Visualisation3.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/Visualisation3.twb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VisualisationComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualisationComputer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +92,8 @@
       <workItem from="1670069113433" duration="3700000" />
       <workItem from="1670107033933" duration="3465000" />
       <workItem from="1670112254836" duration="134000" />
-      <workItem from="1670192372542" duration="1393000" />
+      <workItem from="1670192372542" duration="1412000" />
+      <workItem from="1670246150490" duration="3320000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -204,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670111867799</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="4/12 progress">
+      <created>1670193909139</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1670193909139</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +249,8 @@
     <MESSAGE value="Visualisation 2 tableau improvements" />
     <MESSAGE value="Race overtakes" />
     <MESSAGE value="Visualisation 3 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Visualisation 3 complete" />
+    <MESSAGE value="4/12 progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="4/12 progress" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
