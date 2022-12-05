@@ -1,13 +1,13 @@
-import ergast_models.Pair;
 import ergast_models.*;
 
-import javax.swing.text.Style;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.rmi.UnexpectedException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Scanner;
 
 public class VisualisationComputer {
     public static ArrayList<LapTime> lapTimes = new ArrayList<>();
@@ -265,8 +265,11 @@ public class VisualisationComputer {
 
     // Calculate championships won
     public static void calculateChampionships() throws IOException {
-        FileWriter championshipsWriter = new FileWriter("computed_dataset\\championships.csv");
-        championshipsWriter.write("year,driverId,driverChampionshipWins,driverChampionshipPoints,constructorId,constructorChampionshipWins,constructorChampionshipPoints");
+        FileWriter driverChampionshipsWriter = new FileWriter("computed_dataset\\driver_championships.csv");
+        driverChampionshipsWriter.write("year,driverId,driverChampionshipWins,driverChampionshipPoints");
+
+        FileWriter constructorChampionshipsWriter = new FileWriter("computed_dataset\\constructors_championships.csv");
+        constructorChampionshipsWriter.write("year,constructorId,constructorChampionshipWins,constructorChampionshipPoints");
 
         races.sort(Comparator.comparingInt(Race::getRound));
         races.sort(Comparator.comparingInt(Race::getYear));
@@ -284,13 +287,11 @@ public class VisualisationComputer {
 
         ArrayList<String> driverChampions = new ArrayList<>();
         ArrayList<String> constructorChampions = new ArrayList<>();
-        ArrayList<Integer> winningRaces = new ArrayList<>();
 
         for (DriverStanding driverStanding : driverStandings) {
             if (driverStanding.getPosition() == 1 && finalRounds.contains(driverStanding.getRaceId())) {
                 for (Race race : races) {
-                    if (race.getRaceId().equals(driverStanding.getRaceId()) && (driverStanding.getRaceId() < 776 || driverStanding.getRaceId() > 840)) {
-                        winningRaces.add(race.getRaceId());
+                    if (race.getRaceId().equals(driverStanding.getRaceId())) {
                         driverChampions.add("\n" + race.getYear() + "," + driverStanding.getDriverId()  + "," + driverStanding.getWins() + "," + driverStanding.getPoints());
                         year++;
                         break;
@@ -299,23 +300,28 @@ public class VisualisationComputer {
             }
         }
 
+        // 776 to 840 missing from constructors standings (1950-1956)
+        year = 1958;
+
         for (ConstructorStanding constructorStanding : constructorStandings) {
             if (constructorStanding.getPosition() == 1 && finalRounds.contains(constructorStanding.getRaceId())) {
                 for (Race race : races) {
                     if (race.getRaceId().equals(constructorStanding.getRaceId())) {
-                        winningRaces.add(race.getRaceId());
-                        constructorChampions.add("," + constructorStanding.getConstructorId()  + "," + constructorStanding.getWins() + "," + constructorStanding.getPoints());
+                        constructorChampions.add("\n" + race.getYear() + "," + constructorStanding.getConstructorId()  + "," + constructorStanding.getWins() + "," + constructorStanding.getPoints());
+                        year++;
                         break;
                     }
                 }
             }
         }
 
-        // 776 to 840 missing from constructors standings (1950-1956)
-        for (int i = 0; i < driverChampions.size(); i++) {
-            championshipsWriter.write(driverChampions.get(i) + constructorChampions.get(i));
+        for (String driverChampion : driverChampions) {
+            driverChampionshipsWriter.write(driverChampion);
         }
-
-        championshipsWriter.close();
+        for (String constructorChampion : constructorChampions) {
+            constructorChampionshipsWriter.write(constructorChampion);
+        }
+        driverChampionshipsWriter.close();
+        constructorChampionshipsWriter.close();
     }
 }
