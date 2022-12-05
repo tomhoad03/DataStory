@@ -1,9 +1,12 @@
+import ergast_models.Pair;
 import ergast_models.*;
 
+import javax.swing.text.Style;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.rmi.UnexpectedException;
 import java.util.*;
 
 public class VisualisationComputer {
@@ -249,14 +252,14 @@ public class VisualisationComputer {
     // Calculate championships won
     public static void calculateChampionships() throws IOException {
         FileWriter driverChampionshipsWriter = new FileWriter("computed_dataset\\driver_championships.csv");
-        driverChampionshipsWriter.write("driverId,championships");
+        driverChampionshipsWriter.write("driverId,constructorId,championships");
 
         races.sort(Comparator.comparingInt(Race::getRound));
         races.sort(Comparator.comparingInt(Race::getYear));
         Collections.reverse(races);
 
         ArrayList<Integer> finalRounds = new ArrayList<>();
-        int year = 2022;
+        int year = 2023;
 
         for (Race race : races) {
             if (race.getYear() < year) {
@@ -265,27 +268,32 @@ public class VisualisationComputer {
             }
         }
 
-        ArrayList<Integer> driverChampions = new ArrayList<>();
+        ArrayList<Pair> driverChampions = new ArrayList<>();
         for (DriverStanding driverStanding : driverStandings) {
             if (driverStanding.getPosition() == 1 && finalRounds.contains(driverStanding.getRaceId())) {
-                driverChampions.add(driverStanding.getDriverId());
-            }
-        }
-
-        driverChampions.sort(Comparator.comparingInt(o -> o));
-        int winCount = 0, currentDriverId = -1;
-
-        for (Integer driverChampion : driverChampions) {
-            if (driverChampion != currentDriverId) {
-                if (currentDriverId != -1) {
-                    driverChampionshipsWriter.write("\n" + currentDriverId + "," + winCount);
+                for (Result result : results) {
+                    if (result.getRaceId().equals(driverStanding.getRaceId()) && result.getDriverId().equals(driverStanding.getDriverId())) {
+                        driverChampions.add(new Pair(driverStanding.getDriverId(), result.getConstructorId()));
+                    }
                 }
-                currentDriverId = driverChampion;
-                winCount = 0;
             }
-            winCount++;
         }
-        driverChampionshipsWriter.write("\n" + currentDriverId + "," + winCount);
+
+        driverChampions.sort(Comparator.comparingInt(Pair::driverId));
+        int driverWinCount = 0, currentDriverId = -1, currentConstructorId = -1;
+
+        for (Pair driverChampion : driverChampions) {
+            if (driverChampion.driverId() != currentDriverId) {
+                if (currentDriverId != -1) {
+                    driverChampionshipsWriter.write("\n" + currentDriverId + "," + currentConstructorId + "," + driverWinCount);
+                }
+                currentDriverId = driverChampion.driverId();
+                currentConstructorId = driverChampion.constructorId();
+                driverWinCount = 0;
+            }
+            driverWinCount++;
+        }
+        driverChampionshipsWriter.write("\n" + currentDriverId + "," + currentConstructorId  + "," + driverWinCount);
 
         driverChampionshipsWriter.close();
     }
