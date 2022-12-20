@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Simplifiying 2 and 3">
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Dashboard titles">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/visualisation1/sankey.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tableaus/Visualisation2.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/Visualisation2.twb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tableaus/Visualisation3.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/Visualisation3.twb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DataStory.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tableaus/Visualisation1.twb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -32,16 +36,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/IdeaProjects/DataStory&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Documents/IdeaProjects/DataStory"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Pair" />
@@ -50,6 +55,8 @@
       <recent name="C:\Users\tomho\IdeaProjects\DataStory" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\IdeaProjects\DataStory\src\html" />
+      <recent name="D:\Documents\IdeaProjects\DataStory\resources" />
       <recent name="D:\Documents\IdeaProjects\DataStory\overtaking_dataset" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -100,7 +107,7 @@
       <workItem from="1670192372542" duration="1412000" />
       <workItem from="1670246150490" duration="5337000" />
       <workItem from="1671461796719" duration="2670000" />
-      <workItem from="1671535123934" duration="386000" />
+      <workItem from="1671535123934" duration="2216000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -242,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671475811297</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Dashboard titles">
+      <created>1671535878432</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1671535878432</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +295,8 @@
     <MESSAGE value="Driver championships" />
     <MESSAGE value="Not working championship calculations" />
     <MESSAGE value="Simplifiying 2 and 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simplifiying 2 and 3" />
+    <MESSAGE value="Dashboard titles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard titles" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

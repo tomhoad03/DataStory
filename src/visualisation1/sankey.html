@@ -1,0 +1,29 @@
+<html lang="en-uk">
+    <body>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div id="sankey_multiple" style="width: 900px; height: 300px;"></div>
+
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["sankey"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                let data = new google.visualization.DataTable();
+                data.addColumn('string', 'From');
+                data.addColumn('string', 'To');
+                data.addColumn('number', 'Weight');
+                data.addRows([
+                    [ 'Hamilton', 'Mercedes', 6 ],
+                    [ 'Rosberg', 'Mercedes', 1 ],
+                    [ 'Mercedes', 'Turbo-Hybrid', 7 ]
+                ]);
+
+                let options = {
+                    width: 600,
+                };
+
+                let chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+                chart.draw(data, options);
+            }
+        </script>
+    </body>
+</html>
