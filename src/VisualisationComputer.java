@@ -17,6 +17,8 @@ public class VisualisationComputer {
     public static ArrayList<RaceOvertake> raceOvertakes = new ArrayList<>();
     public static ArrayList<DriverStanding> driverStandings = new ArrayList<>();
     public static ArrayList<ConstructorStanding> constructorStandings = new ArrayList<>();
+    public static ArrayList<Constructor> constructors = new ArrayList<>();
+    public static ArrayList<Driver> drivers = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         readLapTimes();
@@ -26,12 +28,16 @@ public class VisualisationComputer {
         readRaceOvertakes();
         readDriverStandings();
         readConstructorStandings();
+        readConstructors();
+        readDrivers();
 
         calculateRaceTimesBoxPlots();
         calculateSeasonTimesBoxPlots();
         calculateNormalisedResults();
         calculateRaceOvertakes();
         calculateChampionships();
+
+        createVisualisation1();
     }
 
     // Lap Times
@@ -119,6 +125,30 @@ public class VisualisationComputer {
             constructorStandings.add(new ConstructorStanding(constructorStanding));
         }
         constructorStandingsScanner.close();
+    }
+
+    // Constructors
+    public static void readConstructors() throws FileNotFoundException {
+        Scanner constructorsScanner = new Scanner(new File("ergast_dataset\\constructors.csv"));
+        constructorsScanner.nextLine();
+
+        while (constructorsScanner.hasNextLine()) {
+            String constructor = constructorsScanner.nextLine();
+            constructors.add(new Constructor(constructor));
+        }
+        constructorsScanner.close();
+    }
+
+    // Drivers
+    public static void readDrivers() throws FileNotFoundException {
+        Scanner driversScanner = new Scanner(new File("ergast_dataset\\Drivers.csv"));
+        driversScanner.nextLine();
+
+        while (driversScanner.hasNextLine()) {
+            String driver = driversScanner.nextLine();
+            drivers.add(new Driver(driver));
+        }
+        driversScanner.close();
     }
 
     // Calculate race box plots
@@ -323,5 +353,9 @@ public class VisualisationComputer {
         }
         driverChampionshipsWriter.close();
         constructorChampionshipsWriter.close();
+    }
+
+    public static void createVisualisation1() {
+
     }
 }
