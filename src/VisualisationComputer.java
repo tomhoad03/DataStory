@@ -356,6 +356,8 @@ public class VisualisationComputer {
     }
 
     public static void createVisualisation1() {
+        ArrayList<SankeyEntry> sankeyEntries = new ArrayList<>();
+
 
     }
 }
