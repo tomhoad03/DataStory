@@ -363,7 +363,6 @@ public class VisualisationComputer {
         ArrayList<SankeyEntry> sankeyEntries = new ArrayList<>();
 
         for (Champion driverChampion : driverChampions) {
-            System.out.println(driverChampion.toString());
             outer:
             for (Result result : results) {
                 if (result.getDriverId().equals(driverChampion.id())) {
@@ -387,7 +386,29 @@ public class VisualisationComputer {
                             }
 
                             sankeyEntries.add(new SankeyEntry(driver.getSurname(), constructor.getName(), 1, race.getYear()));
-                            System.out.println(driver.getSurname() + "," + constructor.getName());
+
+                            String eraName = "null";
+                            if (race.getYear() > 2013) {
+                                eraName = "Turbo Hybrid V6s";
+                            } else if (race.getYear() > 2005) {
+                                eraName = "Hybrid V8s";
+                            } else if (race.getYear() > 1994) {
+                                eraName = "V8s";
+                            } else if (race.getYear() > 1988) {
+                                eraName = "V10s";
+                            } else if (race.getYear() > 1986) {
+                                eraName = "NAs";
+                            } else if (race.getYear() > 1965) {
+                                eraName = "Sub Eras";
+                            } else if (race.getYear() > 1960) {
+                                eraName = "Rear Engines";
+                            } else if (race.getYear() > 1957) {
+                                eraName = "Mid Engines";
+                            } else if (race.getYear() >= 1950) {
+                                eraName = "Front Engines";
+                            }
+
+                            sankeyEntries.add(new SankeyEntry(constructor.getName(), eraName, 1, race.getYear()));
                             break outer;
                         }
                     }
@@ -396,27 +417,28 @@ public class VisualisationComputer {
         }
 
         sankeyEntries.sort(Comparator.comparingInt(SankeyEntry::year));
-        System.out.println(sankeyEntries);
         boolean test = true;
 
         while (test) {
             ArrayList<SankeyEntry> loopSankeyEntries = new ArrayList<>(sankeyEntries);
             test = false;
+            outer:
             for (SankeyEntry sankeyEntryA : loopSankeyEntries) {
                 for (SankeyEntry sankeyEntryB : loopSankeyEntries) {
                     if (!sankeyEntryA.year().equals(sankeyEntryB.year())) {
                         if (sankeyEntryA.origin().equals(sankeyEntryB.origin()) && sankeyEntryA.target().equals(sankeyEntryB.target())) {
                             sankeyEntries.remove(sankeyEntryA);
                             sankeyEntries.remove(sankeyEntryB);
-                            sankeyEntries.add(new SankeyEntry(sankeyEntryA.origin(), sankeyEntryA.target(), sankeyEntryA.weight() + 1, sankeyEntryA.year()));
+                            sankeyEntries.add(new SankeyEntry(sankeyEntryA.origin(), sankeyEntryA.target(), sankeyEntryA.weight() + sankeyEntryB.weight(), sankeyEntryA.year()));
                             test = true;
-                            continue;
+                            break outer;
                         }
                     }
                 }
             }
         }
 
+        sankeyEntries.sort(Comparator.comparingInt(SankeyEntry::year));
         System.out.println(sankeyEntries);
     }
 }
