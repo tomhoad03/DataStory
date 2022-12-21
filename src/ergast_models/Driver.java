@@ -22,7 +22,7 @@ public class Driver {
 
         this.code = splitLine[3];
         this.forename = splitLine[4];
-        this.surname = splitLine[3];
+        this.surname = splitLine[5];
     }
 
     @Override

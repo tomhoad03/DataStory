@@ -324,7 +324,7 @@ public class VisualisationComputer {
             if (driverStanding.getPosition() == 1 && finalRounds.contains(driverStanding.getRaceId())) {
                 for (Race race : races) {
                     if (race.getRaceId().equals(driverStanding.getRaceId())) {
-                        driverChampions.add(new Champion(driverStanding.getDriverId(), race.getRaceId(), driverStanding.getWins(), driverStanding.getPoints()));
+                        driverChampions.add(new Champion(driverStanding.getDriverId(), race.getYear(), driverStanding.getWins(), driverStanding.getPoints()));
                         driverChampionsStrings.add("\n" + race.getYear() + "," + driverStanding.getDriverId()  + "," + driverStanding.getWins() + "," + driverStanding.getPoints());
                         year++;
                         break;
@@ -340,7 +340,7 @@ public class VisualisationComputer {
             if (constructorStanding.getPosition() == 1 && finalRounds.contains(constructorStanding.getRaceId())) {
                 for (Race race : races) {
                     if (race.getRaceId().equals(constructorStanding.getRaceId())) {
-                        constructorChampions.add(new Champion(constructorStanding.getConstructorId(), race.getRaceId(), constructorStanding.getWins(), constructorStanding.getPoints()));
+                        constructorChampions.add(new Champion(constructorStanding.getConstructorId(), race.getYear(), constructorStanding.getWins(), constructorStanding.getPoints()));
                         constructorChampionsStrings.add("\n" + race.getYear() + "," + constructorStanding.getConstructorId()  + "," + constructorStanding.getWins() + "," + constructorStanding.getPoints());
                         year++;
                         break;
@@ -363,25 +363,55 @@ public class VisualisationComputer {
         ArrayList<SankeyEntry> sankeyEntries = new ArrayList<>();
 
         for (Champion driverChampion : driverChampions) {
+            System.out.println(driverChampion.toString());
+            outer:
             for (Result result : results) {
-                for (Race race : races) {
-                    if (race.getRaceId().equals(result.getRaceId()) && race.getYear().equals(driverChampion.year()) && result.getDriverId().equals(driverChampion.id())) {
-                        Driver driver = null;
-                        Constructor constructor = null;
+                if (result.getDriverId().equals(driverChampion.id())) {
+                    for (Race race : races) {
+                        if (race.getRaceId().equals(result.getRaceId()) && race.getYear().equals(driverChampion.year())) {
+                            Driver driver = null;
+                            Constructor constructor = null;
 
-                        for (Driver foundDriver : drivers) {
-                            if (foundDriver.getDriverId().equals(driverChampion.id())) {
-                                driver = foundDriver;
+                            for (Driver foundDriver : drivers) {
+                                if (foundDriver.getDriverId().equals(driverChampion.id())) {
+                                    driver = foundDriver;
+                                    break;
+                                }
                             }
-                        }
 
-                        for (Constructor foundConstructor : constructors) {
-                            if (foundConstructor.getConstructorId().equals(result.getConstructorId())) {
-                                constructor = foundConstructor;
+                            for (Constructor foundConstructor : constructors) {
+                                if (foundConstructor.getConstructorId().equals(result.getConstructorId())) {
+                                    constructor = foundConstructor;
+                                    break;
+                                }
                             }
-                        }
 
-                        sankeyEntries.add(new SankeyEntry(driver.getSurname(), constructor.getName(), 1));
+                            sankeyEntries.add(new SankeyEntry(driver.getSurname(), constructor.getName(), 1, race.getYear()));
+                            System.out.println(driver.getSurname() + "," + constructor.getName());
+                            break outer;
+                        }
+                    }
+                }
+            }
+        }
+
+        sankeyEntries.sort(Comparator.comparingInt(SankeyEntry::year));
+        System.out.println(sankeyEntries);
+        boolean test = true;
+
+        while (test) {
+            ArrayList<SankeyEntry> loopSankeyEntries = new ArrayList<>(sankeyEntries);
+            test = false;
+            for (SankeyEntry sankeyEntryA : loopSankeyEntries) {
+                for (SankeyEntry sankeyEntryB : loopSankeyEntries) {
+                    if (!sankeyEntryA.year().equals(sankeyEntryB.year())) {
+                        if (sankeyEntryA.origin().equals(sankeyEntryB.origin()) && sankeyEntryA.target().equals(sankeyEntryB.target())) {
+                            sankeyEntries.remove(sankeyEntryA);
+                            sankeyEntries.remove(sankeyEntryB);
+                            sankeyEntries.add(new SankeyEntry(sankeyEntryA.origin(), sankeyEntryA.target(), sankeyEntryA.weight() + 1, sankeyEntryA.year()));
+                            test = true;
+                            continue;
+                        }
                     }
                 }
             }
