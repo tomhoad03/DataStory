@@ -10,7 +10,7 @@ public class RaceOvertake {
         String[] splitLine = csvLine.split(",");
 
         this.year = Integer.valueOf(splitLine[0]);
-        this.name = splitLine[1];
+        this.name = splitLine[1].replace("\"", "");
         this.overtakes = Integer.valueOf(splitLine[2]);
         this.tv = Integer.valueOf(splitLine[3]);
     }

@@ -17,8 +17,8 @@ public class Race {
         this.year = Integer.valueOf(splitLine[1]);
         this.round = Integer.valueOf(splitLine[2]);
         this.circuitId = Integer.valueOf(splitLine[3]);
-        this.name = splitLine[4];
-        this.url = splitLine[7];
+        this.name = splitLine[4].replace("\"", "");
+        this.url = splitLine[7].replace("\"", "");
         this.boxPlot = new BoxPlot(0.0, 0, 0, 0.0, 0, 0.0);
     }
 

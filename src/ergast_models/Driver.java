@@ -20,9 +20,9 @@ public class Driver {
         }
         this.number = number;
 
-        this.code = splitLine[3];
-        this.forename = splitLine[4];
-        this.surname = splitLine[5];
+        this.code = splitLine[3].replace("\"", "");
+        this.forename = splitLine[4].replace("\"", "");
+        this.surname = splitLine[5].replace("\"", "");
     }
 
     @Override

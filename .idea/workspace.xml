@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Basic sankey visualisation">
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Improving sankey visuals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computed_dataset/race_overtakes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/computed_dataset/race_overtakes.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VisualisationComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualisationComputer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/Constructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/Constructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/Race.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/RaceOvertake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/RaceOvertake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ergast_models/Season.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/Season.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/visualisation1/sankey.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualisation1/sankey.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +118,7 @@
       <workItem from="1671538336151" duration="1251000" />
       <workItem from="1671561215387" duration="12000" />
       <workItem from="1671578575189" duration="20000" />
-      <workItem from="1671626019225" duration="5903000" />
+      <workItem from="1671626019225" duration="6753000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -309,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671633854823</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Improving sankey visuals">
+      <created>1671634808144</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1671634808144</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +342,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Box plots" />
     <MESSAGE value="Box plots csv" />
     <MESSAGE value="Season box plots" />
     <MESSAGE value="Race and season box plots" />
@@ -353,7 +366,8 @@
     <MESSAGE value="First try" />
     <MESSAGE value="loops" />
     <MESSAGE value="Basic sankey visualisation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic sankey visualisation" />
+    <MESSAGE value="Improving sankey visuals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improving sankey visuals" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

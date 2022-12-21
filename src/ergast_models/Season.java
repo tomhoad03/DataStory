@@ -9,7 +9,7 @@ public class Season {
         String[] splitLine = csvLine.split(",");
 
         this.year = Integer.valueOf(splitLine[0]);
-        this.url = splitLine[1];
+        this.url = splitLine[1].replace("\"", "");
         this.boxPlot = new BoxPlot(0.0, 0, 0, 0.0, 0, 0.0);
     }
 

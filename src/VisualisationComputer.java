@@ -386,11 +386,12 @@ public class VisualisationComputer {
                             }
 
                             String constructorName = constructor.getName();
-                            String driverName = driver.getSurname();
-
-                            if (driverName.equals("Brabham")) {
-                                driverName = "J Brabham";
-                            }
+                            String driverName = switch (driver.getSurname()) {
+                                case "Brabham" -> "J Brabham";
+                                case "Räikkönen" -> "Raikkonen";
+                                case "Häkkinen" -> "Hakkinen";
+                                default -> driver.getSurname();
+                            };
 
                             sankeyEntries.add(new SankeyEntry(constructorName, driverName, 1, race.getYear()));
 

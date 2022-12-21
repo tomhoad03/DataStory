@@ -8,7 +8,7 @@ public class Constructor {
         String[] splitLine = csvLine.split(",");
 
         this.constructorId = Integer.valueOf(splitLine[0]);
-        this.name = splitLine[2];
+        this.name = splitLine[2].replace("\"", "");
     }
 
     @Override
