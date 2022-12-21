@@ -72,14 +72,14 @@
                     ['Hill','Williams',1],
                     ['Williams','V8s',2],
                     ['Villeneuve','Williams',1],
-                    ['Häkkinen','McLaren',2],
+                    ['Hakkinen','McLaren',2],
                     ['McLaren','V8s',2],
                     ['Schumacher','Ferrari',5],
                     ['Ferrari','V8s',5],
                     ['Renault','V8s',1],
                     ['Alonso','Renault',2],
                     ['Renault','Hybrid V8s',1],
-                    ['Räikkönen','Ferrari',1],
+                    ['Raikkonen','Ferrari',1],
                     ['Ferrari','Hybrid V8s',1],
                     ['Hamilton','McLaren',1],
                     ['McLaren','Hybrid V8s',1],
@@ -93,9 +93,27 @@
                     ['Verstappen','Red Bull',2],
                     ['Red Bull','Turbo Hybrid V6s',2]]);
 
+                let colors = ['#2fa1dc', '#87dc40', '#ef5c5b', '#e8a157',
+                    '#c076ea', '#f8f861', '#207bb4', '#299b20'];
+
+
                 let options = {
-                    width: 1800,
-                    height: 800,
+                    width: 1900,
+                    height: 900,
+                    sankey: {
+                        node: {
+                            colors: colors,
+                            label: { fontSize: 12 },
+                            width: 20,
+                            nodePadding: 10,
+                            interactivity: true
+                        },
+                        link: {
+                            colorMode: 'gradient',
+                            colors: colors,
+                            color: { stroke: 'black', strokeWidth: 0.1, fillOpacity: 0.8 }
+                        }
+                    }
                 };
 
                 let chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));

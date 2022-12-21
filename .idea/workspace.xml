@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="loops">
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Basic sankey visualisation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VisualisationComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualisationComputer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ergast_models/SankeyEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ergast_models/SankeyEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/visualisation1/sankey.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualisation1/sankey.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +111,7 @@
       <workItem from="1671538336151" duration="1251000" />
       <workItem from="1671561215387" duration="12000" />
       <workItem from="1671578575189" duration="20000" />
-      <workItem from="1671626019225" duration="4970000" />
+      <workItem from="1671626019225" duration="5903000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -303,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671628927408</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Basic sankey visualisation">
+      <created>1671633854823</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1671633854823</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +328,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Computing races" />
     <MESSAGE value="Box plots" />
     <MESSAGE value="Box plots csv" />
     <MESSAGE value="Season box plots" />
@@ -347,7 +352,8 @@
     <MESSAGE value="SankeyEntry" />
     <MESSAGE value="First try" />
     <MESSAGE value="loops" />
-    <option name="LAST_COMMIT_MESSAGE" value="loops" />
+    <MESSAGE value="Basic sankey visualisation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic sankey visualisation" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

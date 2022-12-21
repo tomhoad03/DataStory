@@ -385,7 +385,14 @@ public class VisualisationComputer {
                                 }
                             }
 
-                            sankeyEntries.add(new SankeyEntry(driver.getSurname(), constructor.getName(), 1, race.getYear()));
+                            String constructorName = constructor.getName();
+                            String driverName = driver.getSurname();
+
+                            if (driverName.equals("Brabham")) {
+                                driverName = "J Brabham";
+                            }
+
+                            sankeyEntries.add(new SankeyEntry(constructorName, driverName, 1, race.getYear()));
 
                             String eraName = "null";
                             if (race.getYear() > 2013) {
@@ -408,7 +415,7 @@ public class VisualisationComputer {
                                 eraName = "Front Engines";
                             }
 
-                            sankeyEntries.add(new SankeyEntry(constructor.getName(), eraName, 1, race.getYear()));
+                            sankeyEntries.add(new SankeyEntry(driverName, eraName, 1, race.getYear()));
                             break outer;
                         }
                     }
