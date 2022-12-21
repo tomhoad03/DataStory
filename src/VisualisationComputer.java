@@ -19,6 +19,8 @@ public class VisualisationComputer {
     public static ArrayList<ConstructorStanding> constructorStandings = new ArrayList<>();
     public static ArrayList<Constructor> constructors = new ArrayList<>();
     public static ArrayList<Driver> drivers = new ArrayList<>();
+    public static ArrayList<Champion> constructorChampions = new ArrayList<>();
+    public static ArrayList<Champion> driverChampions = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         readLapTimes();
@@ -315,14 +317,15 @@ public class VisualisationComputer {
             }
         }
 
-        ArrayList<String> driverChampions = new ArrayList<>();
-        ArrayList<String> constructorChampions = new ArrayList<>();
+        ArrayList<String> driverChampionsStrings = new ArrayList<>();
+        ArrayList<String> constructorChampionsStrings = new ArrayList<>();
 
         for (DriverStanding driverStanding : driverStandings) {
             if (driverStanding.getPosition() == 1 && finalRounds.contains(driverStanding.getRaceId())) {
                 for (Race race : races) {
                     if (race.getRaceId().equals(driverStanding.getRaceId())) {
-                        driverChampions.add("\n" + race.getYear() + "," + driverStanding.getDriverId()  + "," + driverStanding.getWins() + "," + driverStanding.getPoints());
+                        driverChampions.add(new Champion(driverStanding.getDriverId(), race.getRaceId(), driverStanding.getWins(), driverStanding.getPoints()));
+                        driverChampionsStrings.add("\n" + race.getYear() + "," + driverStanding.getDriverId()  + "," + driverStanding.getWins() + "," + driverStanding.getPoints());
                         year++;
                         break;
                     }
@@ -337,7 +340,8 @@ public class VisualisationComputer {
             if (constructorStanding.getPosition() == 1 && finalRounds.contains(constructorStanding.getRaceId())) {
                 for (Race race : races) {
                     if (race.getRaceId().equals(constructorStanding.getRaceId())) {
-                        constructorChampions.add("\n" + race.getYear() + "," + constructorStanding.getConstructorId()  + "," + constructorStanding.getWins() + "," + constructorStanding.getPoints());
+                        constructorChampions.add(new Champion(constructorStanding.getConstructorId(), race.getRaceId(), constructorStanding.getWins(), constructorStanding.getPoints()));
+                        constructorChampionsStrings.add("\n" + race.getYear() + "," + constructorStanding.getConstructorId()  + "," + constructorStanding.getWins() + "," + constructorStanding.getPoints());
                         year++;
                         break;
                     }
@@ -345,10 +349,10 @@ public class VisualisationComputer {
             }
         }
 
-        for (String driverChampion : driverChampions) {
+        for (String driverChampion : driverChampionsStrings) {
             driverChampionshipsWriter.write(driverChampion);
         }
-        for (String constructorChampion : constructorChampions) {
+        for (String constructorChampion : constructorChampionsStrings) {
             constructorChampionshipsWriter.write(constructorChampion);
         }
         driverChampionshipsWriter.close();
@@ -358,6 +362,31 @@ public class VisualisationComputer {
     public static void createVisualisation1() {
         ArrayList<SankeyEntry> sankeyEntries = new ArrayList<>();
 
+        for (Champion driverChampion : driverChampions) {
+            for (Result result : results) {
+                for (Race race : races) {
+                    if (race.getRaceId().equals(result.getRaceId()) && race.getYear().equals(driverChampion.year()) && result.getDriverId().equals(driverChampion.id())) {
+                        Driver driver = null;
+                        Constructor constructor = null;
 
+                        for (Driver foundDriver : drivers) {
+                            if (foundDriver.getDriverId().equals(driverChampion.id())) {
+                                driver = foundDriver;
+                            }
+                        }
+
+                        for (Constructor foundConstructor : constructors) {
+                            if (foundConstructor.getConstructorId().equals(result.getConstructorId())) {
+                                constructor = foundConstructor;
+                            }
+                        }
+
+                        sankeyEntries.add(new SankeyEntry(driver.getSurname(), constructor.getName(), 1));
+                    }
+                }
+            }
+        }
+
+        System.out.println(sankeyEntries);
     }
 }
