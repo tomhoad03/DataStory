@@ -447,6 +447,111 @@ public class VisualisationComputer {
         }
 
         sankeyEntries.sort(Comparator.comparingInt(SankeyEntry::year));
-        System.out.println(sankeyEntries);
+        // System.out.println(sankeyEntries);
+
+        ArrayList<SankeyEntry> sankeyEntries2 = new ArrayList<>();
+
+        for (Champion constructorChampion : constructorChampions) {
+            int driverA = -1;
+            int driverB = -1;
+
+            outer:
+            for (Result result : results) {
+                if (result.getConstructorId().equals(constructorChampion.id())) {
+                    for (Race race : races) {
+                        if (race.getRaceId().equals(result.getRaceId()) && race.getYear().equals(constructorChampion.year()) && (driverA != result.getDriverId() || driverA == -1)) {
+                            Driver driver = null;
+                            Constructor constructor = null;
+
+                            for (Driver foundDriver : drivers) {
+                                if (foundDriver.getDriverId().equals(result.getDriverId())) {
+                                    if (driverA == -1) {
+                                        driverA = foundDriver.getDriverId();
+                                        driver = foundDriver;
+                                    } else {
+                                        driverB = foundDriver.getDriverId();
+                                        driver = foundDriver;
+                                    }
+                                    break;
+                                }
+                            }
+
+                            for (Constructor foundConstructor : constructors) {
+                                if (foundConstructor.getConstructorId().equals(result.getConstructorId())) {
+                                    constructor = foundConstructor;
+                                    break;
+                                }
+                            }
+
+                            String constructorName = constructor.getName();
+                            String driverName = switch (driver.getSurname()) {
+                                case "Brabham" -> "J Brabham";
+                                case "Räikkönen" -> "Raikkonen";
+                                case "Häkkinen" -> "Hakkinen";
+                                case "McLaren" -> "B McLaren";
+                                case "Pérez" -> "Perez";
+                                default -> driver.getSurname();
+                            };
+
+                            sankeyEntries2.add(new SankeyEntry(driverName, constructorName, 1, race.getYear()));
+
+                            String eraName = "null";
+                            if (race.getYear() > 2013) {
+                                eraName = "Turbo Hybrid V6s";
+                            } else if (race.getYear() > 2005) {
+                                eraName = "Hybrid V8s";
+                            } else if (race.getYear() > 1994) {
+                                eraName = "V8s";
+                            } else if (race.getYear() > 1988) {
+                                eraName = "V10s";
+                            } else if (race.getYear() > 1986) {
+                                eraName = "NAs";
+                            } else if (race.getYear() > 1965) {
+                                eraName = "Sub Eras";
+                            } else if (race.getYear() > 1960) {
+                                eraName = "Rear Engines";
+                            } else if (race.getYear() > 1957) {
+                                eraName = "Mid Engines";
+                            } else if (race.getYear() >= 1950) {
+                                eraName = "Front Engines";
+                            }
+
+                            sankeyEntries2.add(new SankeyEntry(constructorName, eraName, 1, race.getYear()));
+
+                            if (driverB == -1) {
+                                break;
+                            } else {
+                                break outer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        sankeyEntries2.sort(Comparator.comparingInt(SankeyEntry::year));
+        test = true;
+
+        while (test) {
+            ArrayList<SankeyEntry> loopSankeyEntries2 = new ArrayList<>(sankeyEntries2);
+            test = false;
+            outer:
+            for (SankeyEntry sankeyEntryA : loopSankeyEntries2) {
+                for (SankeyEntry sankeyEntryB : loopSankeyEntries2) {
+                    if (!sankeyEntryA.year().equals(sankeyEntryB.year())) {
+                        if (sankeyEntryA.origin().equals(sankeyEntryB.origin()) && sankeyEntryA.target().equals(sankeyEntryB.target())) {
+                            sankeyEntries2.remove(sankeyEntryA);
+                            sankeyEntries2.remove(sankeyEntryB);
+                            sankeyEntries2.add(new SankeyEntry(sankeyEntryA.origin(), sankeyEntryA.target(), sankeyEntryA.weight() + sankeyEntryB.weight(), sankeyEntryA.year()));
+                            test = true;
+                            break outer;
+                        }
+                    }
+                }
+            }
+        }
+
+        sankeyEntries2.sort(Comparator.comparingInt(SankeyEntry::year));
+        System.out.println(sankeyEntries2);
     }
 }

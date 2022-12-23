@@ -1,0 +1,171 @@
+<html lang="en-uk">
+    <body>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div id="sankey_multiple" style="width: 900px; height: 300px;"></div>
+
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["sankey"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                let data = new google.visualization.DataTable();
+                data.addColumn('string', 'From');
+                data.addColumn('string', 'To');
+                data.addColumn('number', 'Championships');
+                data.addRows([['Moss','Vanwall',1],
+                    ['Vanwall','Mid Engines',1],
+                    ['Brooks','Vanwall',1],
+                    ['Vanwall','Mid Engines',1],
+                    ['J Brabham','Cooper-Climax',1],
+                    ['Cooper-Climax','Mid Engines',2],
+                    ['Trintignant','Cooper-Climax',2],
+                    ['Cooper-Climax','Mid Engines',2],
+                    ['B McLaren','Cooper-Climax',1],
+                    ['Ginther','Ferrari',1],
+                    ['Hill','Ferrari',1],
+                    ['Ferrari','Rear Engines',2],
+                    ['Ferrari','Rear Engines',2],
+                    ['Hill','BRM',1],
+                    ['BRM','Rear Engines',1],
+                    ['Ginther','BRM',1],
+                    ['BRM','Rear Engines',1],
+                    ['Taylor','Lotus-Climax',1],
+                    ['Lotus-Climax','Rear Engines',2],
+                    ['Clark','Lotus-Climax',2],
+                    ['Lotus-Climax','Rear Engines',2],
+                    ['Bandini','Ferrari',1],
+                    ['Surtees','Ferrari',1],
+                    ['Spence','Lotus-Climax',1],
+                    ['J Brabham','Brabham-Repco',2],
+                    ['Brabham-Repco','Sub Eras',2],
+                    ['Hulme','Brabham-Repco',2],
+                    ['Brabham-Repco','Sub Eras',2],
+                    ['Clark','Lotus-Ford',1],
+                    ['Lotus-Ford','Sub Eras',1],
+                    ['Hill','Lotus-Ford',1],
+                    ['Lotus-Ford','Sub Eras',1],
+                    ['Stewart','Matra-Ford',1],
+                    ['Matra-Ford','Sub Eras',1],
+                    ['Beltoise','Matra-Ford',1],
+                    ['Matra-Ford','Sub Eras',1],
+                    ['Miles','Team Lotus',1],
+                    ['Hill','Team Lotus',1],
+                    ['Team Lotus','Sub Eras',4],
+                    ['Team Lotus','Sub Eras',4],
+                    ['Stewart','Tyrrell',1],
+                    ['Tyrrell','Sub Eras',1],
+                    ['Cevert','Tyrrell',1],
+                    ['Tyrrell','Sub Eras',1],
+                    ['Walker','Team Lotus',1],
+                    ['Fittipaldi','Team Lotus',2],
+                    ['Peterson','Team Lotus',2],
+                    ['Hulme','McLaren',1],
+                    ['Hailwood','McLaren',1],
+                    ['Regazzoni','Ferrari',2],
+                    ['Reutemann','Ferrari',1],
+                    ['Lauda','Ferrari',3],
+                    ['Andretti','Team Lotus',1],
+                    ['Scheckter','Ferrari',1],
+                    ['Villeneuve','Ferrari',2],
+                    ['Jones','Williams',2],
+                    ['Reutemann','Williams',2],
+                    ['Pironi','Ferrari',1],
+                    ['Ferrari','Sub Eras',6],
+                    ['Ferrari','Sub Eras',6],
+                    ['Tambay','Ferrari',1],
+                    ['Arnoux','Ferrari',1],
+                    ['Lauda','McLaren',2],
+                    ['Prost','McLaren',4],
+                    ['McLaren','Sub Eras',3],
+                    ['McLaren','Sub Eras',3],
+                    ['Piquet','Williams',2],
+                    ['Williams','Sub Eras',3],
+                    ['Williams','Sub Eras',3],
+                    ['Williams','NAs',1],
+                    ['Williams','NAs',1],
+                    ['McLaren','NAs',1],
+                    ['McLaren','NAs',1],
+                    ['Senna','McLaren',4],
+                    ['Berger','McLaren',2],
+                    ['McLaren','V10s',3],
+                    ['McLaren','V10s',3],
+                    ['Patrese','Williams',1],
+                    ['Mansell','Williams',3],
+                    ['Prost','Williams',1],
+                    ['Senna','Williams',1],
+                    ['Williams','V10s',3],
+                    ['Williams','V10s',3],
+                    ['Schumacher','Benetton',1],
+                    ['Benetton','V8s',1],
+                    ['Herbert','Benetton',1],
+                    ['Benetton','V8s',1],
+                    ['Hill','Williams',3],
+                    ['Williams','V8s',2],
+                    ['Villeneuve','Williams',2],
+                    ['Williams','V8s',2],
+                    ['Frentzen','Williams',1],
+                    ['Hakkinen','McLaren',1],
+                    ['McLaren','V8s',1],
+                    ['Coulthard','McLaren',1],
+                    ['McLaren','V8s',1],
+                    ['Irvine','Ferrari',1],
+                    ['Barrichello','Ferrari',5],
+                    ['Schumacher','Ferrari',6],
+                    ['Ferrari','V8s',6],
+                    ['Ferrari','V8s',6],
+                    ['Renault','V8s',1],
+                    ['Renault','V8s',1],
+                    ['Fisichella','Renault',2],
+                    ['Alonso','Renault',2],
+                    ['Renault','Hybrid V8s',1],
+                    ['Renault','Hybrid V8s',1],
+                    ['Raikkonen','Ferrari',2],
+                    ['Ferrari','Hybrid V8s',2],
+                    ['Massa','Ferrari',2],
+                    ['Ferrari','Hybrid V8s',2],
+                    ['Button','Brawn',1],
+                    ['Brawn','Hybrid V8s',1],
+                    ['Barrichello','Brawn',1],
+                    ['Brawn','Hybrid V8s',1],
+                    ['Vettel','Red Bull',4],
+                    ['Red Bull','Hybrid V8s',4],
+                    ['Webber','Red Bull',4],
+                    ['Red Bull','Hybrid V8s',4],
+                    ['Mercedes','Turbo Hybrid V6s',8],
+                    ['Hamilton','Mercedes',8],
+                    ['Mercedes','Turbo Hybrid V6s',8],
+                    ['Rosberg','Mercedes',3],
+                    ['Bottas','Mercedes',5],
+                    ['Perez','Red Bull',1],
+                    ['Red Bull','Turbo Hybrid V6s',1],
+                    ['Verstappen','Red Bull',1],
+                    ['Red Bull','Turbo Hybrid V6s',1]]);
+
+                let colors = ['#2fa1dc', '#87dc40', '#ef5c5b', '#e8a157',
+                    '#c076ea', '#f8f861', '#207bb4', '#299b20'];
+
+
+                let options = {
+                    width: 1900,
+                    height: 900,
+                    sankey: {
+                        node: {
+                            colors: colors,
+                            label: { fontSize: 12 },
+                            width: 20,
+                            nodePadding: 10,
+                            interactivity: true
+                        },
+                        link: {
+                            colorMode: 'gradient',
+                            colors: colors,
+                            color: { stroke: 'black', strokeWidth: 0.1, fillOpacity: 0.8 }
+                        }
+                    }
+                };
+
+                let chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+                chart.draw(data, options);
+            }
+        </script>
+    </body>
+</html>
