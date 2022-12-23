@@ -1,0 +1,271 @@
+<html lang="en-uk">
+    <body>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div id="wrapper1" style="display:flex; position:relative;">
+            <div id="sankey_multiple1" style="width: 1900px; height: 900px; margin: auto;"></div>
+        </div>
+        <div id="wrapper2" style="display:flex; position:relative;">
+            <div id="sankey_multiple2" style="width: 900px; height: 900px; margin: auto;"></div>
+            <div id="sankey_multiple3" style="width: 900px; height: 900px; margin: auto;"></div>
+        </div>
+
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["sankey"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                let data1 = new google.visualization.DataTable();
+                data1.addColumn('string', 'From');
+                data1.addColumn('string', 'To');
+                data1.addColumn('number', 'Championships');
+                data1.addRows([['Alfa Romeo','Farina',1],
+                    ['Farina','Front Engines',1],
+                    ['Alfa Romeo','Fangio',1],
+                    ['Ferrari','Ascari',2],
+                    ['Ascari','Front Engines',2],
+                    ['Maserati','Fangio',2],
+                    ['Mercedes','Fangio',1],
+                    ['Fangio','Front Engines',5],
+                    ['Ferrari','Fangio',1],
+                    ['Ferrari','Hawthorn',1],
+                    ['Hawthorn','Mid Engines',1],
+                    ['Cooper-Climax','J Brabham',2],
+                    ['J Brabham','Mid Engines',2],
+                    ['Ferrari','Hill',1],
+                    ['Hill','Rear Engines',2],
+                    ['BRM','Hill',1],
+                    ['Lotus-Climax','Clark',2],
+                    ['Clark','Rear Engines',2],
+                    ['Ferrari','Surtees',1],
+                    ['Surtees','Rear Engines',1],
+                    ['Brabham-Repco','J Brabham',1],
+                    ['J Brabham','Sub Eras',1],
+                    ['Brabham-Repco','Hulme',1],
+                    ['Hulme','Sub Eras',1],
+                    ['Lotus-Ford','Hill',1],
+                    ['Hill','Sub Eras',1],
+                    ['Matra-Ford','Stewart',1],
+                    ['Team Lotus','Rindt',1],
+                    ['Rindt','Sub Eras',1],
+                    ['Tyrrell','Stewart',2],
+                    ['Team Lotus','Fittipaldi',1],
+                    ['Fittipaldi','Sub Eras',2],
+                    ['Stewart','Sub Eras',3],
+                    ['McLaren','Fittipaldi',1],
+                    ['Ferrari','Lauda',2],
+                    ['McLaren','Hunt',1],
+                    ['Hunt','Sub Eras',1],
+                    ['Team Lotus','Andretti',1],
+                    ['Andretti','Sub Eras',1],
+                    ['Ferrari','Scheckter',1],
+                    ['Scheckter','Sub Eras',1],
+                    ['Williams','Jones',1],
+                    ['Jones','Sub Eras',1],
+                    ['Brabham','Piquet',2],
+                    ['Piquet','Sub Eras',2],
+                    ['Williams','Rosberg',1],
+                    ['Rosberg','Sub Eras',1],
+                    ['McLaren','Lauda',1],
+                    ['Lauda','Sub Eras',3],
+                    ['Prost','Sub Eras',2],
+                    ['Williams','Piquet',1],
+                    ['Piquet','NAs',1],
+                    ['Senna','NAs',1],
+                    ['McLaren','Prost',3],
+                    ['Prost','V10s',2],
+                    ['Senna','V10s',2],
+                    ['McLaren','Senna',3],
+                    ['Williams','Mansell',1],
+                    ['Mansell','V10s',1],
+                    ['Williams','Prost',1],
+                    ['Schumacher','V10s',1],
+                    ['Benetton','Schumacher',2],
+                    ['Williams','Hill',1],
+                    ['Hill','V8s',1],
+                    ['Williams','Villeneuve',1],
+                    ['Villeneuve','V8s',1],
+                    ['McLaren','Hakkinen',2],
+                    ['Hakkinen','V8s',2],
+                    ['Ferrari','Schumacher',5],
+                    ['Schumacher','V8s',6],
+                    ['Alonso','V8s',1],
+                    ['Renault','Alonso',2],
+                    ['Alonso','Hybrid V8s',1],
+                    ['Ferrari','Raikkonen',1],
+                    ['Raikkonen','Hybrid V8s',1],
+                    ['McLaren','Hamilton',1],
+                    ['Hamilton','Hybrid V8s',1],
+                    ['Brawn','Button',1],
+                    ['Button','Hybrid V8s',1],
+                    ['Red Bull','Vettel',4],
+                    ['Vettel','Hybrid V8s',4],
+                    ['Mercedes','Rosberg',1],
+                    ['Rosberg','Turbo Hybrid V6s',1],
+                    ['Mercedes','Hamilton',6],
+                    ['Hamilton','Turbo Hybrid V6s',6],
+                    ['Red Bull','Verstappen',2],
+                    ['Verstappen','Turbo Hybrid V6s',2]]);
+
+                let data2 = new google.visualization.DataTable();
+                data2.addColumn('string', 'From');
+                data2.addColumn('string', 'To');
+                data2.addColumn('number', 'Championships');
+                data2.addRows([['Moss','Vanwall',1],
+                    ['Brooks','Vanwall',1],
+                    ['J Brabham','Cooper-Climax',1],
+                    ['Trintignant','Cooper-Climax',2],
+                    ['B McLaren','Cooper-Climax',1],
+                    ['Ginther','Ferrari',1],
+                    ['Hill','Ferrari',1],
+                    ['Hill','BRM',1],
+                    ['Ginther','BRM',1],
+                    ['Taylor','Lotus-Climax',1],
+                    ['Clark','Lotus-Climax',2],
+                    ['Bandini','Ferrari',1],
+                    ['Surtees','Ferrari',1],
+                    ['Spence','Lotus-Climax',1],
+                    ['J Brabham','Brabham-Repco',2],
+                    ['Hulme','Brabham-Repco',2],
+                    ['Clark','Lotus-Ford',1],
+                    ['Hill','Lotus-Ford',1],
+                    ['Stewart','Matra-Ford',1],
+                    ['Beltoise','Matra-Ford',1],
+                    ['Miles','Team Lotus',1],
+                    ['Hill','Team Lotus',1],
+                    ['Stewart','Tyrrell',1],
+                    ['Cevert','Tyrrell',1],
+                    ['Walker','Team Lotus',1],
+                    ['Fittipaldi','Team Lotus',2],
+                    ['Peterson','Team Lotus',2],
+                    ['Hulme','McLaren',1],
+                    ['Hailwood','McLaren',1],
+                    ['Regazzoni','Ferrari',2],
+                    ['Reutemann','Ferrari',1],
+                    ['Lauda','Ferrari',3],
+                    ['Andretti','Team Lotus',1],
+                    ['Scheckter','Ferrari',1],
+                    ['Villeneuve','Ferrari',2],
+                    ['Jones','Williams',2],
+                    ['Reutemann','Williams',2],
+                    ['Pironi','Ferrari',1],
+                    ['Tambay','Ferrari',1],
+                    ['Arnoux','Ferrari',1],
+                    ['Lauda','McLaren',2],
+                    ['Prost','McLaren',4],
+                    ['Piquet','Williams',2],
+                    ['Senna','McLaren',4],
+                    ['Berger','McLaren',2],
+                    ['Patrese','Williams',1],
+                    ['Mansell','Williams',3],
+                    ['Prost','Williams',1],
+                    ['Senna','Williams',1],
+                    ['Schumacher','Benetton',1],
+                    ['Herbert','Benetton',1],
+                    ['Hill','Williams',3],
+                    ['Villeneuve','Williams',2],
+                    ['Frentzen','Williams',1],
+                    ['Hakkinen','McLaren',1],
+                    ['Coulthard','McLaren',1],
+                    ['Irvine','Ferrari',1],
+                    ['Barrichello','Ferrari',5],
+                    ['Schumacher','Ferrari',6],
+                    ['Fisichella','Renault',2],
+                    ['Alonso','Renault',2],
+                    ['Raikkonen','Ferrari',2],
+                    ['Massa','Ferrari',2],
+                    ['Button','Brawn',1],
+                    ['Barrichello','Brawn',1],
+                    ['Vettel','Red Bull',4],
+                    ['Webber','Red Bull',4],
+                    ['Hamilton','Mercedes',8],
+                    ['Rosberg','Mercedes',3],
+                    ['Bottas','Mercedes',5],
+                    ['Perez','Red Bull',1],
+                    ['Verstappen','Red Bull',1]]);
+
+                let data3 = new google.visualization.DataTable();
+                data3.addColumn('string', 'From');
+                data3.addColumn('string', 'To');
+                data3.addColumn('number', 'Championships');
+                data3.addRows([
+                    ['Vanwall','Mid Engines',1],
+                    ['Cooper-Climax','Mid Engines',2],
+                    ['Ferrari','Rear Engines',2],
+                    ['BRM','Rear Engines',1],
+                    ['Lotus-Climax','Rear Engines',2],
+                    ['Brabham-Repco','Sub Eras',2],
+                    ['Lotus-Ford','Sub Eras',1],
+                    ['Matra-Ford','Sub Eras',1],
+                    ['Team Lotus','Sub Eras',4],
+                    ['Tyrrell','Sub Eras',1],
+                    ['Ferrari','Sub Eras',6],
+                    ['McLaren','Sub Eras',3],
+                    ['Williams','Sub Eras',3],
+                    ['Williams','NAs',1],
+                    ['McLaren','NAs',1],
+                    ['McLaren','V10s',3],
+                    ['Williams','V10s',3],
+                    ['Benetton','V8s',1],
+                    ['Williams','V8s',2],
+                    ['McLaren','V8s',1],
+                    ['Ferrari','V8s',6],
+                    ['Renault','V8s',1],
+                    ['Renault','Hybrid V8s',1],
+                    ['Ferrari','Hybrid V8s',2],
+                    ['Brawn','Hybrid V8s',1],
+                    ['Red Bull','Hybrid V8s',4],
+                    ['Mercedes','Turbo Hybrid V6s',8],
+                    ['Red Bull','Turbo Hybrid V6s',1]]);
+
+                let colors = ['#2fa1dc', '#87dc40', '#ef5c5b', '#e8a157',
+                    '#c076ea', '#f8f861', '#207bb4', '#299b20'];
+
+                let options1 = {
+                    width: 1900,
+                    height: 900,
+                    sankey: {
+                        node: {
+                            colors: colors,
+                            label: { fontSize: 12 },
+                            width: 20,
+                            nodePadding: 10,
+                            interactivity: true
+                        },
+                        link: {
+                            colorMode: 'gradient',
+                            colors: colors,
+                            color: { stroke: 'black', strokeWidth: 0.1, fillOpacity: 0.8 }
+                        }
+                    }
+                };
+
+                let options2 = {
+                    width: 900,
+                    height: 900,
+                    sankey: {
+                        node: {
+                            colors: colors,
+                            label: { fontSize: 12 },
+                            width: 20,
+                            nodePadding: 10,
+                            interactivity: true
+                        },
+                        link: {
+                            colorMode: 'gradient',
+                            colors: colors,
+                            color: { stroke: 'black', strokeWidth: 0.1, fillOpacity: 0.8 }
+                        }
+                    }
+                };
+
+                let chart1 = new google.visualization.Sankey(document.getElementById('sankey_multiple1'));
+                chart1.draw(data1, options1);
+
+                let chart2 = new google.visualization.Sankey(document.getElementById('sankey_multiple2'));
+                chart2.draw(data2, options2);
+
+                let chart3 = new google.visualization.Sankey(document.getElementById('sankey_multiple3'));
+                chart3.draw(data3, options2);
+            }
+        </script>
+    </body>
+</html>

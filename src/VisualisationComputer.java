@@ -450,6 +450,7 @@ public class VisualisationComputer {
         // System.out.println(sankeyEntries);
 
         ArrayList<SankeyEntry> sankeyEntries2 = new ArrayList<>();
+        ArrayList<SankeyEntry> sankeyEntries3 = new ArrayList<>();
 
         for (Champion constructorChampion : constructorChampions) {
             int driverA = -1;
@@ -516,9 +517,8 @@ public class VisualisationComputer {
                                 eraName = "Front Engines";
                             }
 
-                            sankeyEntries2.add(new SankeyEntry(constructorName, eraName, 1, race.getYear()));
-
                             if (driverB == -1) {
+                                sankeyEntries3.add(new SankeyEntry(constructorName, eraName, 1, race.getYear()));
                                 break;
                             } else {
                                 break outer;
@@ -553,5 +553,30 @@ public class VisualisationComputer {
 
         sankeyEntries2.sort(Comparator.comparingInt(SankeyEntry::year));
         System.out.println(sankeyEntries2);
+
+        sankeyEntries3.sort(Comparator.comparingInt(SankeyEntry::year));
+        test = true;
+
+        while (test) {
+            ArrayList<SankeyEntry> loopSankeyEntries3 = new ArrayList<>(sankeyEntries3);
+            test = false;
+            outer:
+            for (SankeyEntry sankeyEntryA : loopSankeyEntries3) {
+                for (SankeyEntry sankeyEntryB : loopSankeyEntries3) {
+                    if (!sankeyEntryA.year().equals(sankeyEntryB.year())) {
+                        if (sankeyEntryA.origin().equals(sankeyEntryB.origin()) && sankeyEntryA.target().equals(sankeyEntryB.target())) {
+                            sankeyEntries3.remove(sankeyEntryA);
+                            sankeyEntries3.remove(sankeyEntryB);
+                            sankeyEntries3.add(new SankeyEntry(sankeyEntryA.origin(), sankeyEntryA.target(), sankeyEntryA.weight() + sankeyEntryB.weight(), sankeyEntryA.year()));
+                            test = true;
+                            break outer;
+                        }
+                    }
+                }
+            }
+        }
+
+        sankeyEntries3.sort(Comparator.comparingInt(SankeyEntry::year));
+        System.out.println(sankeyEntries3);
     }
 }
