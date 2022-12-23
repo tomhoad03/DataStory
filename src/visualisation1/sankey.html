@@ -12,6 +12,7 @@
         <script type="text/javascript">
             google.charts.load("current", {packages:["sankey"]});
             google.charts.setOnLoadCallback(drawChart);
+
             function drawChart() {
                 let data1 = new google.visualization.DataTable();
                 data1.addColumn('string', 'From');
@@ -186,8 +187,7 @@
                 data3.addColumn('string', 'From');
                 data3.addColumn('string', 'To');
                 data3.addColumn('number', 'Championships');
-                data3.addRows([
-                    ['Vanwall','Mid Engines',1],
+                data3.addRows([['Vanwall','Mid Engines',1],
                     ['Cooper-Climax','Mid Engines',2],
                     ['Ferrari','Rear Engines',2],
                     ['BRM','Rear Engines',1],
@@ -216,15 +216,21 @@
                     ['Mercedes','Turbo Hybrid V6s',8],
                     ['Red Bull','Turbo Hybrid V6s',1]]);
 
-                let colors = ['#2fa1dc', '#87dc40', '#ef5c5b', '#e8a157',
-                    '#c076ea', '#f8f861', '#207bb4', '#299b20'];
+                let colors1 = ['#00D2BE', '#DC0000', '#0600EF', '#0090FF', '#FFFFFF',
+                    '#006F62', '#2B4562', '#FF8700', '#900000', '#900000'];
+
+                let colors2 = ['#00D2BE', '#DC0000', '#0600EF', '#0090FF', '#FFFFFF',
+                    '#006F62', '#2B4562', '#FF8700', '#900000', '#900000'];
+
+                let colors3 = ['#00D2BE', '#DC0000', '#0600EF', '#0090FF', '#FFFFFF',
+                    '#006F62', '#2B4562', '#FF8700', '#900000', '#900000'];
 
                 let options1 = {
                     width: 1900,
                     height: 900,
                     sankey: {
                         node: {
-                            colors: colors,
+                            colors: colors1,
                             label: { fontSize: 12 },
                             width: 20,
                             nodePadding: 10,
@@ -232,7 +238,7 @@
                         },
                         link: {
                             colorMode: 'gradient',
-                            colors: colors,
+                            colors: colors1,
                             color: { stroke: 'black', strokeWidth: 0.1, fillOpacity: 0.8 }
                         }
                     }
@@ -243,7 +249,7 @@
                     height: 900,
                     sankey: {
                         node: {
-                            colors: colors,
+                            colors: colors2,
                             label: { fontSize: 12 },
                             width: 20,
                             nodePadding: 10,
@@ -251,20 +257,63 @@
                         },
                         link: {
                             colorMode: 'gradient',
-                            colors: colors,
+                            colors: colors2,
                             color: { stroke: 'black', strokeWidth: 0.1, fillOpacity: 0.8 }
                         }
                     }
                 };
 
-                let chart1 = new google.visualization.Sankey(document.getElementById('sankey_multiple1'));
+                let options3 = {
+                    width: 900,
+                    height: 900,
+                    sankey: {
+                        node: {
+                            colors: colors3,
+                            label: { fontSize: 12 },
+                            width: 20,
+                            nodePadding: 10,
+                            interactivity: true
+                        },
+                        link: {
+                            colorMode: 'gradient',
+                            colors: colors3,
+                            color: { stroke: 'black', strokeWidth: 0.1, fillOpacity: 0.8 }
+                        }
+                    }
+                };
+
+                let chartDiv1 = document.getElementById('sankey_multiple1');
+                let chartDiv2 = document.getElementById('sankey_multiple2');
+                let chartDiv3 = document.getElementById('sankey_multiple3');
+
+                let chart1 = new google.visualization.Sankey(chartDiv1);
+                let chart2 = new google.visualization.Sankey(chartDiv2);
+                let chart3 = new google.visualization.Sankey(chartDiv3);
+
+                let colorMap = {
+                    'Ferrari': 'red',
+                    'Red Bull': 'navy'
+                };
+
+                let sheet = window.document.styleSheets[0]
+
+                let observer = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (mutation) {
+                        mutation.addedNodes.forEach(function (node) {
+                            if (node.tagName === 'text') {
+                                sheet.insertRule('svg rect { fill: '+ colorMap[node.innerHTML] +'; }', sheet.cssRules.length);
+                            }
+                        });
+                    });
+                });
+                observer.observe(chartDiv1, {
+                    childList: true,
+                    subtree: true
+                });
+
                 chart1.draw(data1, options1);
-
-                let chart2 = new google.visualization.Sankey(document.getElementById('sankey_multiple2'));
                 chart2.draw(data2, options2);
-
-                let chart3 = new google.visualization.Sankey(document.getElementById('sankey_multiple3'));
-                chart3.draw(data3, options2);
+                chart3.draw(data3, options3);
             }
         </script>
     </body>
