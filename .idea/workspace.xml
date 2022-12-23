@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Hash map">
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Colours">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VisualisationComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualisationComputer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualisation1/sankey.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualisation1/sankey.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +113,7 @@
       <workItem from="1671561215387" duration="12000" />
       <workItem from="1671578575189" duration="20000" />
       <workItem from="1671626019225" duration="7988000" />
-      <workItem from="1671796172089" duration="10246000" />
+      <workItem from="1671796172089" duration="10971000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -368,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671814238484</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Colours">
+      <created>1671815476017</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1671815476017</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +393,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="No laps no points" />
     <MESSAGE value="Visualisation 2 tableau" />
     <MESSAGE value="Visualisation 2 tableau improvements" />
     <MESSAGE value="Race overtakes" />
@@ -412,7 +417,8 @@
     <MESSAGE value="Extracted method" />
     <MESSAGE value="String ordering" />
     <MESSAGE value="Hash map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hash map" />
+    <MESSAGE value="Colours" />
+    <option name="LAST_COMMIT_MESSAGE" value="Colours" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
