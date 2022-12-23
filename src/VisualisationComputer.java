@@ -518,103 +518,107 @@ public class VisualisationComputer {
 
         Map<String, String> colourMap = new HashMap<>();
 
-       for (String entryString : entryStringsAll) {
+        for (String entryString : entryStringsAll) {
             String entryColour = switch (entryString) {
-                case "Alfa Romeo" -> "#000000";
-                case "Farina" -> "#000000";
-                case "Front Engines" -> "#000000";
-                case "Fangio" -> "#000000";
-                case "Ferrari" -> "#000000";
-                case "Ascari" -> "#000000";
-                case "Maserati" -> "#000000";
-                case "Mercedes" -> "#000000";
-                case "Hawthorn" -> "#000000";
-                case "Mid Engines" -> "#000000";
-                case "Cooper-Climax" -> "#000000";
-                case "J Brabham" -> "#000000";
-                case "Hill" -> "#000000";
-                case "Rear Engines" -> "#000000";
-                case "BRM" -> "#000000";
-                case "Lotus-Climax" -> "#000000";
-                case "Clark" -> "#000000";
-                case "Surtees" -> "#000000";
-                case "Brabham-Repco" -> "#000000";
-                case "Sub Eras" -> "#000000";
-                case "Hulme" -> "#000000";
-                case "Lotus-Ford" -> "#000000";
-                case "Matra-Ford" -> "#000000";
-                case "Stewart" -> "#000000";
-                case "Team Lotus" -> "#000000";
-                case "Rindt" -> "#000000";
-                case "Tyrrell" -> "#000000";
-                case "Fittipaldi" -> "#000000";
-                case "McLaren" -> "#000000";
-                case "Lauda" -> "#000000";
-                case "Hunt" -> "#000000";
-                case "Andretti" -> "#000000";
-                case "Scheckter" -> "#000000";
-                case "Williams" -> "#000000";
-                case "Jones" -> "#000000";
-                case "Brabham" -> "#000000";
-                case "Piquet" -> "#000000";
-                case "NAs" -> "#000000";
-                case "Senna" -> "#000000";
-                case "V10s" -> "#000000";
-                case "Mansell" -> "#000000";
-                case "Schumacher" -> "#000000";
-                case "Benetton" -> "#000000";
-                case "V8s" -> "#000000";
-                case "Villeneuve" -> "#000000";
-                case "Hakkinen" -> "#000000";
-                case "Alonso" -> "#000000";
-                case "Renault" -> "#000000";
-                case "Hybrid V8s" -> "#000000";
-                case "Raikkonen" -> "#000000";
-                case "Hamilton" -> "#000000";
-                case "Brawn" -> "#000000";
-                case "Button" -> "#000000";
-                case "Red Bull" -> "#000000";
-                case "Vettel" -> "#000000";
-                case "Turbo Hybrid V6s" -> "#000000";
-                case "Verstappen" -> "#000000";
-                case "Moss" -> "#000000";
-                case "Vanwall" -> "#000000";
-                case "Brooks" -> "#000000";
-                case "Trintignant" -> "#000000";
-                case "B McLaren" -> "#000000";
-                case "Ginther" -> "#000000";
-                case "Taylor" -> "#000000";
-                case "Bandini" -> "#000000";
-                case "Spence" -> "#000000";
-                case "Beltoise" -> "#000000";
-                case "Miles" -> "#000000";
-                case "Cevert" -> "#000000";
-                case "Walker" -> "#000000";
-                case "Peterson" -> "#000000";
-                case "Hailwood" -> "#000000";
-                case "Regazzoni" -> "#000000";
-                case "Reutemann" -> "#000000";
-                case "Pironi" -> "#000000";
-                case "Tambay" -> "#000000";
-                case "Arnoux" -> "#000000";
-                case "Berger" -> "#000000";
-                case "Patrese" -> "#000000";
-                case "Herbert" -> "#000000";
-                case "Frentzen" -> "#000000";
-                case "Coulthard" -> "#000000";
-                case "Irvine" -> "#000000";
-                case "Barrichello" -> "#000000";
-                case "Fisichella" -> "#000000";
-                case "Massa" -> "#000000";
-                case "Webber" -> "#000000";
-                case "Bottas" -> "#000000";
-                case "Perez" -> "#000000";
-                default -> "#000000";
+                case "Alfa Romeo" -> "#900000";
+                case "Farina" -> "#D3D3D3";
+                case "Front Engines" -> "#2B4562";
+                case "Fangio" -> "#D3D3D3";
+                case "Ferrari" -> "#DC0000";
+                case "Ascari" -> "#D3D3D3";
+                case "Maserati" -> "#D3D3D3";
+                case "Mercedes" -> "#00D2BE";
+                case "Hawthorn" -> "#D3D3D3";
+                case "Mid Engines" -> "#2B4562";
+                case "Cooper-Climax" -> "#D3D3D3";
+                case "J Brabham" -> "#D3D3D3";
+                case "Hill" -> "#D3D3D3";
+                case "Rear Engines" -> "#2B4562";
+                case "BRM" -> "#D3D3D3";
+                case "Lotus-Climax" -> "#D3D3D3";
+                case "Clark" -> "#D3D3D3";
+                case "Surtees" -> "#D3D3D3";
+                case "Brabham-Repco" -> "#D3D3D3";
+                case "Sub Eras" -> "#2B4562";
+                case "Hulme" -> "#D3D3D3";
+                case "Lotus-Ford" -> "#D3D3D3";
+                case "Matra-Ford" -> "#D3D3D3";
+                case "Stewart" -> "#D3D3D3";
+                case "Team Lotus" -> "#D3D3D3";
+                case "Rindt" -> "#D3D3D3";
+                case "Tyrrell" -> "#D3D3D3";
+                case "Fittipaldi" -> "#D3D3D3";
+                case "McLaren" -> "#FF8700";
+                case "Lauda" -> "#D3D3D3";
+                case "Hunt" -> "#D3D3D3";
+                case "Andretti" -> "#D3D3D3";
+                case "Scheckter" -> "#D3D3D3";
+                case "Williams" -> "#FFFFFF";
+                case "Jones" -> "#D3D3D3";
+                case "Brabham" -> "#D3D3D3";
+                case "Piquet" -> "#D3D3D3";
+                case "NAs" -> "#2B4562";
+                case "Senna" -> "#D3D3D3";
+                case "V10s" -> "#2B4562";
+                case "Mansell" -> "#D3D3D3";
+                case "Schumacher" -> "#D3D3D3";
+                case "Benetton" -> "#D3D3D3";
+                case "V8s" -> "#2B4562";
+                case "Villeneuve" -> "#D3D3D3";
+                case "Hakkinen" -> "#D3D3D3";
+                case "Alonso" -> "#D3D3D3";
+                case "Renault" -> "#D3D3D3";
+                case "Hybrid V8s" -> "#2B4562";
+                case "Raikkonen" -> "#D3D3D3";
+                case "Hamilton" -> "#D3D3D3";
+                case "Brawn" -> "#D3D3D3";
+                case "Button" -> "#D3D3D3";
+                case "Red Bull" -> "#0600EF";
+                case "Vettel" -> "#D3D3D3";
+                case "Turbo Hybrid V6s" -> "#2B4562";
+                case "Verstappen" -> "#D3D3D3";
+                case "Moss" -> "#D3D3D3";
+                case "Vanwall" -> "#D3D3D3";
+                case "Brooks" -> "#D3D3D3";
+                case "Trintignant" -> "#D3D3D3";
+                case "B McLaren" -> "#D3D3D3";
+                case "Ginther" -> "#D3D3D3";
+                case "Taylor" -> "#D3D3D3";
+                case "Bandini" -> "#D3D3D3";
+                case "Spence" -> "#D3D3D3";
+                case "Beltoise" -> "#D3D3D3";
+                case "Miles" -> "#D3D3D3";
+                case "Cevert" -> "#D3D3D3";
+                case "Walker" -> "#D3D3D3";
+                case "Peterson" -> "#D3D3D3";
+                case "Hailwood" -> "#D3D3D3";
+                case "Regazzoni" -> "#D3D3D3";
+                case "Reutemann" -> "#D3D3D3";
+                case "Pironi" -> "#D3D3D3";
+                case "Tambay" -> "#D3D3D3";
+                case "Arnoux" -> "#D3D3D3";
+                case "Berger" -> "#D3D3D3";
+                case "Patrese" -> "#D3D3D3";
+                case "Herbert" -> "#D3D3D3";
+                case "Frentzen" -> "#D3D3D3";
+                case "Coulthard" -> "#D3D3D3";
+                case "Irvine" -> "#D3D3D3";
+                case "Barrichello" -> "#D3D3D3";
+                case "Fisichella" -> "#D3D3D3";
+                case "Massa" -> "#D3D3D3";
+                case "Webber" -> "#D3D3D3";
+                case "Bottas" -> "#D3D3D3";
+                case "Perez" -> "#D3D3D3";
+                default -> "#D3D3D3";
             };
             colourMap.put(entryString, entryColour);
-       }
+        }
 
         System.out.println(colourMap);
+
+        createColourArray(entryStrings1, colourMap, 1);
+        createColourArray(entryStrings2, colourMap, 2);
+        createColourArray(entryStrings3, colourMap,3);
     }
 
     private static void sortMergeSankeyEntries(ArrayList<SankeyEntry> sankeyEntries) {
@@ -656,5 +660,15 @@ public class VisualisationComputer {
         }
         System.out.println(entryStrings);
         return entryStrings;
+    }
+
+    private static void createColourArray(ArrayList<String> entryStrings, Map<String, String> colourMap, int n) {
+        StringBuilder arrayString = new StringBuilder();
+        arrayString.append("let colors").append(n).append(" = [");
+        for (int i = 0; i < entryStrings.size() - 1; i++) {
+            arrayString.append("'").append(colourMap.get(entryStrings.get(i))).append("', ");
+        }
+        arrayString.append("'").append(colourMap.get(entryStrings.get(entryStrings.size() - 1))).append("'];");
+        System.out.println(arrayString);
     }
 }
