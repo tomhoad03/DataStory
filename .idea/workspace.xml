@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Extracted method">
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="String ordering">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VisualisationComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualisationComputer.java" afterDir="false" />
     </list>
@@ -113,7 +113,7 @@
       <workItem from="1671561215387" duration="12000" />
       <workItem from="1671578575189" duration="20000" />
       <workItem from="1671626019225" duration="7988000" />
-      <workItem from="1671796172089" duration="7445000" />
+      <workItem from="1671796172089" duration="9380000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -353,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671812160725</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="String ordering">
+      <created>1671812577796</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1671812577796</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +379,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Data" />
     <MESSAGE value="modern points system" />
     <MESSAGE value="No laps no points" />
     <MESSAGE value="Visualisation 2 tableau" />
@@ -397,7 +403,8 @@
     <MESSAGE value="Merging sankeys" />
     <MESSAGE value="Improved colour scheme" />
     <MESSAGE value="Extracted method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracted method" />
+    <MESSAGE value="String ordering" />
+    <option name="LAST_COMMIT_MESSAGE" value="String ordering" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

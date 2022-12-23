@@ -4,10 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class VisualisationComputer {
     public static ArrayList<LapTime> lapTimes = new ArrayList<>();
@@ -509,9 +508,113 @@ public class VisualisationComputer {
         sortMergeSankeyEntries(sankeyEntries2);
         sortMergeSankeyEntries(sankeyEntries3);
 
-        findStringOrder(sankeyEntries1);
-        findStringOrder(sankeyEntries2);
-        findStringOrder(sankeyEntries3);
+        ArrayList<String> entryStrings1 = findStringOrder(sankeyEntries1);
+        ArrayList<String> entryStrings2 = findStringOrder(sankeyEntries2);
+        ArrayList<String> entryStrings3 = findStringOrder(sankeyEntries3);
+
+        ArrayList<String> entryStringsAll = findStringOrder(Stream.of(sankeyEntries1,sankeyEntries2, sankeyEntries3)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList()));
+
+        Map<String, String> colourMap = new HashMap<>();
+
+       for (String entryString : entryStringsAll) {
+            String entryColour = switch (entryString) {
+                case "Alfa Romeo" -> "#000000";
+                case "Farina" -> "#000000";
+                case "Front Engines" -> "#000000";
+                case "Fangio" -> "#000000";
+                case "Ferrari" -> "#000000";
+                case "Ascari" -> "#000000";
+                case "Maserati" -> "#000000";
+                case "Mercedes" -> "#000000";
+                case "Hawthorn" -> "#000000";
+                case "Mid Engines" -> "#000000";
+                case "Cooper-Climax" -> "#000000";
+                case "J Brabham" -> "#000000";
+                case "Hill" -> "#000000";
+                case "Rear Engines" -> "#000000";
+                case "BRM" -> "#000000";
+                case "Lotus-Climax" -> "#000000";
+                case "Clark" -> "#000000";
+                case "Surtees" -> "#000000";
+                case "Brabham-Repco" -> "#000000";
+                case "Sub Eras" -> "#000000";
+                case "Hulme" -> "#000000";
+                case "Lotus-Ford" -> "#000000";
+                case "Matra-Ford" -> "#000000";
+                case "Stewart" -> "#000000";
+                case "Team Lotus" -> "#000000";
+                case "Rindt" -> "#000000";
+                case "Tyrrell" -> "#000000";
+                case "Fittipaldi" -> "#000000";
+                case "McLaren" -> "#000000";
+                case "Lauda" -> "#000000";
+                case "Hunt" -> "#000000";
+                case "Andretti" -> "#000000";
+                case "Scheckter" -> "#000000";
+                case "Williams" -> "#000000";
+                case "Jones" -> "#000000";
+                case "Brabham" -> "#000000";
+                case "Piquet" -> "#000000";
+                case "NAs" -> "#000000";
+                case "Senna" -> "#000000";
+                case "V10s" -> "#000000";
+                case "Mansell" -> "#000000";
+                case "Schumacher" -> "#000000";
+                case "Benetton" -> "#000000";
+                case "V8s" -> "#000000";
+                case "Villeneuve" -> "#000000";
+                case "Hakkinen" -> "#000000";
+                case "Alonso" -> "#000000";
+                case "Renault" -> "#000000";
+                case "Hybrid V8s" -> "#000000";
+                case "Raikkonen" -> "#000000";
+                case "Hamilton" -> "#000000";
+                case "Brawn" -> "#000000";
+                case "Button" -> "#000000";
+                case "Red Bull" -> "#000000";
+                case "Vettel" -> "#000000";
+                case "Turbo Hybrid V6s" -> "#000000";
+                case "Verstappen" -> "#000000";
+                case "Moss" -> "#000000";
+                case "Vanwall" -> "#000000";
+                case "Brooks" -> "#000000";
+                case "Trintignant" -> "#000000";
+                case "B McLaren" -> "#000000";
+                case "Ginther" -> "#000000";
+                case "Taylor" -> "#000000";
+                case "Bandini" -> "#000000";
+                case "Spence" -> "#000000";
+                case "Beltoise" -> "#000000";
+                case "Miles" -> "#000000";
+                case "Cevert" -> "#000000";
+                case "Walker" -> "#000000";
+                case "Peterson" -> "#000000";
+                case "Hailwood" -> "#000000";
+                case "Regazzoni" -> "#000000";
+                case "Reutemann" -> "#000000";
+                case "Pironi" -> "#000000";
+                case "Tambay" -> "#000000";
+                case "Arnoux" -> "#000000";
+                case "Berger" -> "#000000";
+                case "Patrese" -> "#000000";
+                case "Herbert" -> "#000000";
+                case "Frentzen" -> "#000000";
+                case "Coulthard" -> "#000000";
+                case "Irvine" -> "#000000";
+                case "Barrichello" -> "#000000";
+                case "Fisichella" -> "#000000";
+                case "Massa" -> "#000000";
+                case "Webber" -> "#000000";
+                case "Bottas" -> "#000000";
+                case "Perez" -> "#000000";
+                default -> "#000000";
+            };
+            colourMap.put(entryString, entryColour);
+       }
+
+        System.out.println(colourMap);
     }
 
     private static void sortMergeSankeyEntries(ArrayList<SankeyEntry> sankeyEntries) {
@@ -541,7 +644,7 @@ public class VisualisationComputer {
         System.out.println(sankeyEntries);
     }
 
-    private static void findStringOrder(ArrayList<SankeyEntry> sankeyEntries) {
+    private static ArrayList<String> findStringOrder(List<SankeyEntry> sankeyEntries) {
         ArrayList<String> entryStrings = new ArrayList<>();
         for (SankeyEntry sankeyEntry : sankeyEntries) {
             if (!entryStrings.contains(sankeyEntry.origin())) {
@@ -552,5 +655,6 @@ public class VisualisationComputer {
             }
         }
         System.out.println(entryStrings);
+        return entryStrings;
     }
 }
