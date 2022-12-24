@@ -20,6 +20,7 @@ public class VisualisationComputer {
     public static ArrayList<Driver> drivers = new ArrayList<>();
     public static ArrayList<Champion> constructorChampions = new ArrayList<>();
     public static ArrayList<Champion> driverChampions = new ArrayList<>();
+    public static ArrayList<QualifyingResult> qualifyingResults = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         readLapTimes();
@@ -31,12 +32,14 @@ public class VisualisationComputer {
         readConstructorStandings();
         readConstructors();
         readDrivers();
+        readQualifying();
 
         calculateRaceTimesBoxPlots();
         calculateSeasonTimesBoxPlots();
         calculateNormalisedResults();
         calculateRaceOvertakes();
         calculateChampionships();
+        calculateQualifying();
 
         createVisualisation1();
     }
@@ -150,6 +153,18 @@ public class VisualisationComputer {
             drivers.add(new Driver(driver));
         }
         driversScanner.close();
+    }
+
+    // Qualifying
+    public static void readQualifying() throws FileNotFoundException {
+        Scanner qualifyingScanner = new Scanner(new File("ergast_dataset\\qualifying.csv"));
+        qualifyingScanner.nextLine();
+
+        while (qualifyingScanner.hasNextLine()) {
+            String qualifyingResult = qualifyingScanner.nextLine();
+            qualifyingResults.add(new QualifyingResult(qualifyingResult));
+        }
+        qualifyingScanner.close();
     }
 
     // Calculate race box plots
@@ -356,6 +371,17 @@ public class VisualisationComputer {
         }
         driverChampionshipsWriter.close();
         constructorChampionshipsWriter.close();
+    }
+
+    // Calculate qualifying results
+    public static void calculateQualifying() throws IOException {
+        FileWriter qualifyingWriter = new FileWriter("computed_dataset\\qualifying_results.csv");
+        qualifyingWriter.write("qualifyId,raceId,driverId,constructorId,number,position,q1,q2,q3,fastestLap");
+
+        for (QualifyingResult qualifyingResult : qualifyingResults) {
+            qualifyingWriter.write("\n" + qualifyingResult.getQualifyId() + "," + qualifyingResult.getRaceId()  + "," + qualifyingResult.getDriverId() + "," + qualifyingResult.getConstructorId() + "," + qualifyingResult.getNumber() + "," + qualifyingResult.getPosition() + "," + qualifyingResult.getQ1() + "," + qualifyingResult.getQ2() + "," + qualifyingResult.getQ3() + "," + qualifyingResult.getFastestLap());
+        }
+        qualifyingWriter.close();
     }
 
     public static void createVisualisation1() {

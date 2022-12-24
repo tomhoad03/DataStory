@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Adding driver colours">
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Coloured all driver champions">
+      <change afterPath="$PROJECT_DIR$/computed_dataset/qualifying_results.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ergast_models/QualifyingResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VisualisationComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisualisationComputer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualisation1/sankey.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualisation1/sankey.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tableaus/Visualisation2.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/Visualisation2.twb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tableaus/Visualisation3.twb" beforeDir="false" afterPath="$PROJECT_DIR$/tableaus/Visualisation3.twb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +118,7 @@
       <workItem from="1671578575189" duration="20000" />
       <workItem from="1671626019225" duration="7988000" />
       <workItem from="1671796172089" duration="13182000" />
-      <workItem from="1671881079603" duration="1248000" />
+      <workItem from="1671881079603" duration="2923000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -397,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671820913416</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Coloured all driver champions">
+      <created>1671882522338</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1671882522338</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +426,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Visualisation 3 complete" />
     <MESSAGE value="4/12 progress" />
     <MESSAGE value="Driver championships" />
     <MESSAGE value="Not working championship calculations" />
@@ -441,7 +450,8 @@
     <MESSAGE value="Slowly adding teams" />
     <MESSAGE value="Finished team colours" />
     <MESSAGE value="Adding driver colours" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding driver colours" />
+    <MESSAGE value="Coloured all driver champions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Coloured all driver champions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
