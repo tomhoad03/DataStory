@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Flex containers">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/datastory.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/datastory.html" afterDir="false" />
-    </list>
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Html layout complete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +115,7 @@
       <workItem from="1672150472230" duration="7000" />
       <workItem from="1672150761574" duration="264000" />
       <workItem from="1672240282599" duration="7000" />
-      <workItem from="1672312447586" duration="4703000" />
+      <workItem from="1672312447586" duration="5009000" />
     </task>
     <task id="LOCAL-00001" summary="Ergast API dataset">
       <created>1669820914087</created>
@@ -442,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672315885742</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Html layout complete">
+      <created>1672317763682</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1672317763682</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +465,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Visualisation 1 start" />
     <MESSAGE value="Testing interactivity" />
     <MESSAGE value="Read constructors and drivers" />
     <MESSAGE value="SankeyEntry" />
@@ -486,7 +489,8 @@
     <MESSAGE value="Visualisation titles" />
     <MESSAGE value="Exported tableaus" />
     <MESSAGE value="Flex containers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Flex containers" />
+    <MESSAGE value="Html layout complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Html layout complete" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
