@@ -10,19 +10,19 @@
 
         <!-- Visualisation 1 -->
         <div id="wrapper1" style="display:flex; position:relative;">
-            <div id="sankey_multiple1" style="width: 1900px; height: 900px; margin: auto;"></div>
+            <div id="sankey_multiple1" style="width: 1800px; height: 900px; margin: auto;"></div>
         </div>
 
         <div id="wrapper2" style="display:flex; position:relative;">
-            <div id="sankey_multiple2" style="width: 900px; height: 900px; margin: auto;"></div>
-            <div id="sankey_multiple3" style="width: 900px; height: 900px; margin: auto;"></div>
+            <div id="sankey_multiple2" style="width: 850px; height: 900px; margin: auto;"></div>
+            <div id="sankey_multiple3" style="width: 850px; height: 900px; margin: auto;"></div>
         </div>
 
         <!-- Visualisation 2 -->
         <div id="wrapper3" style="display:flex; position:relative;">
             <tableau-viz id="visualisation2"
                          src='https://public.tableau.com/views/Visualisation2_16723148203520/Visualisation2?:language=en-GB&publish=yes&:display_count=n&:origin=viz_share_link'
-                         toolbar='bottom' hide-tabs
+                         height='900' width='1800' toolbar='bottom' hide-tabs
                          style="margin: auto;">
             </tableau-viz>
         </div>
@@ -31,7 +31,7 @@
         <div id="wrapper4" style="display:flex; position:relative;">
             <tableau-viz id="visualisation3"
                          src='https://public.tableau.com/views/Visualisation3_16723149238570/Visualisation3?:language=en-GB&publish=yes&:display_count=n&:origin=viz_share_link'
-                         toolbar='bottom' hide-tabs
+                         height='900' width='1800' toolbar='bottom' hide-tabs
                          style="margin: auto;">
             </tableau-viz>
         </div>
@@ -40,7 +40,7 @@
         <div id="wrapper5" style="display:flex; position:relative;">
             <tableau-viz id="visualisation5"
                          src='https://public.tableau.com/views/Visualisation4_16723150410210/Visualisation4?:language=en-GB&publish=yes&:display_count=n&:origin=viz_share_link'
-                         toolbar='bottom' hide-tabs
+                         height='900' width='1900' toolbar='bottom' hide-tabs
                          style="margin: auto;">
             </tableau-viz>
         </div>
@@ -257,8 +257,6 @@
                 let colors3 = ['#004225', '#2B4562', '#000000', '#DC0000', '#2B4562', '#FD7E3C', '#006F62', '#C4883A', '#2B4562', '#EB2D3B', '#0068B9', '#D7C7AE', '#0E3182', '#FF8700', '#00A0DE', '#2B4562', '#2B4562', '#008860', '#2B4562', '#FFF500', '#2B4562', '#B8FD6E', '#0600EF', '#00D2BE', '#2B4562'];
 
                 let options1 = {
-                    width: 1900,
-                    height: 900,
                     sankey: {
                         node: {
                             colors: colors1,
@@ -276,8 +274,6 @@
                 };
 
                 let options2 = {
-                    width: 900,
-                    height: 900,
                     sankey: {
                         node: {
                             colors: colors2,
@@ -295,8 +291,6 @@
                 };
 
                 let options3 = {
-                    width: 900,
-                    height: 900,
                     sankey: {
                         node: {
                             colors: colors3,
