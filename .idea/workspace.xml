@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Early report">
-      <change afterPath="$PROJECT_DIR$/src/font/Formula1-Bold.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/Formula1-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/Formula1-Wide.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/README (Important message).txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/fangio.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/hamilton.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/prost.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/schumacher.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/vettel.jpg" afterDir="false" />
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="Starting to add text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/datastory.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/datastory.html" afterDir="false" />
     </list>
@@ -143,14 +134,10 @@
       <workItem from="1672832314926" duration="596000" />
       <workItem from="1672844880011" duration="614000" />
       <workItem from="1672851330755" duration="10000" />
-      <workItem from="1673011484240" duration="2613000" />
-    </task>
-    <task id="LOCAL-00002" summary="Computing laptimes">
-      <created>1669821841034</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1669821841034</updated>
+      <workItem from="1673011484240" duration="2874000" />
+      <workItem from="1673018725469" duration="1203000" />
+      <workItem from="1673094988171" duration="7000" />
+      <workItem from="1673098655319" duration="625000" />
     </task>
     <task id="LOCAL-00003" summary="Computing races">
       <created>1669823676511</created>
@@ -488,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672761224049</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Starting to add text">
+      <created>1673016644447</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1673016644448</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +501,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="First try" />
     <MESSAGE value="loops" />
     <MESSAGE value="Basic sankey visualisation" />
     <MESSAGE value="Improving sankey visuals" />
@@ -532,7 +525,8 @@
     <MESSAGE value="Title" />
     <MESSAGE value="Updated visualisations" />
     <MESSAGE value="Early report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Early report" />
+    <MESSAGE value="Starting to add text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting to add text" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
