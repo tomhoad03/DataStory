@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="More text">
+    <list default="true" id="8f9a3efc-390d-4b65-ba5b-a88700a0f888" name="Changes" comment="IEEE Word Document">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,13 +139,8 @@
       <workItem from="1673098655319" duration="3002000" />
       <workItem from="1673122877447" duration="10000" />
       <workItem from="1673190126231" duration="10000" />
-    </task>
-    <task id="LOCAL-00004" summary="Box plots">
-      <created>1669826187162</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1669826187162</updated>
+      <workItem from="1673264882909" duration="623000" />
+      <workItem from="1673273566741" duration="16000" />
     </task>
     <task id="LOCAL-00005" summary="Box plots csv">
       <created>1669826620919</created>
@@ -483,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673099459289</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="IEEE Word Document">
+      <created>1673265513941</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1673265513942</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +504,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Basic sankey visualisation" />
     <MESSAGE value="Improving sankey visuals" />
     <MESSAGE value="Removed speech marks" />
     <MESSAGE value="Second sankey" />
@@ -527,7 +528,8 @@
     <MESSAGE value="Early report" />
     <MESSAGE value="Starting to add text" />
     <MESSAGE value="More text" />
-    <option name="LAST_COMMIT_MESSAGE" value="More text" />
+    <MESSAGE value="IEEE Word Document" />
+    <option name="LAST_COMMIT_MESSAGE" value="IEEE Word Document" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DataStory$Visualisation3.ic" NAME="Visualisation3 Coverage Results" MODIFIED="1669832857725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
